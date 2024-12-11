@@ -1,0 +1,100 @@
+section {
+  display: flex;
+  justify-content: space-between;
+  // align-items: center;
+  height: 100vh;
+  margin: 0px 100px 0 100px;
+}
+
+.about-me-section {
+  // font-family: "Syne-ExtraBold";
+  // font-size: 78px;
+  // font-weight: 800;
+
+  h3 {
+    font-family: "Syne-ExtraBold";
+    font-size: 78px;
+    font-weight: 800;
+  }
+
+  h3:hover {
+    color: #00bc8f;
+    cursor: default;
+  }
+
+  .about-me-text {
+    font-family: "Overpass-Regular";
+    font-size: 22px;
+    font-weight: 400;
+    height: 200px; // Fixe Höhe
+    width: 650px; // Fixe Breite
+    display: flex; // Flexbox für Zentrierung
+    justify-content: center; // Horizontale Zentrierung
+    align-items: center; // Vertikale Zentrierung
+    box-sizing: border-box; // Padding/Border in der Größe berücksichtigen
+    padding: 10px; // Optional: Abstand innerhalb des Quadrats
+    overflow-wrap: break-word; // Zeilenumbruch bei langen Wörtern
+    margin: 32px 0px 32px 0px;
+  }
+}
+
+.about-me-icn {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+  font-family: "Overpass-Regular";
+  font-size: 22px;
+  font-weight: 400;
+  text-align: center;
+  color: #000000;
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.btn-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 56px;
+
+  .btn {
+    text-align: center;
+    text-decoration: none;
+    color: #000000;
+    font-family: "Overpass-Regular";
+    font-size: 23px;
+    font-weight: 400;
+    padding: 20px 60px;
+    border: #000000 solid 4px;
+
+    transition: width 0.3s ease; // Übergangseffekt nur für die Breite
+    // width: 200px; // Startbreite
+    height: auto; // Höhe bleibt stabil (basierend auf Padding)
+
+    &:hover {
+      cursor: pointer;
+      padding: 20px 80px;
+      // transform: scale(1.1); // Button wird größer
+      // width: 150px; // Neue Breite beim Hover
+    }
+  }
+}
+
+.my-img {
+  margin-top: 120px;
+  img {
+    height: 500px;
+    display: block;
+    transition: box-shadow 0.1s ease;
+
+    // outline: #000000 solid 4px;
+    // bottom: -10px;
+    &:hover {
+        outline: #000000 solid 4px;
+        // box-shadow: 4px 4px 4px 4px black;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: 0;
+  padding-top: 100px;
+  height: 100vh;
+}
+
+.general-text {
+  // display: flex;
+  text-align: center;
+  color: black;
+
+  h1 {
+    font-family: "Syne-ExtraBold";
+    font-size: 128px;
+    font-weight: 800;
+    letter-spacing: -2.5%; // Buchstabenabstand gemäß Mockup
+    //   line-height: 128px;
+  }
+
+  .line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    box-sizing: border-box;
+    p {
+      background-color: #000000;
+      height: 3px;
+      width: 600px;
+    }
+    span {
+      font-family: "Overpass";
+      font-size: 48px;
+      font-weight: 700;
+      color: #00bc8f;
+    }
+  }
+}
+
+.mail-srcoll {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-family: 'Overpass-Light';
+  font-weight: 300;
+//   line-height: 22;
+
+  .mail {
+    span {
+      font-size: 22px;
+    //   line-height: 22;
+    transform: rotate(-90deg); // Hier wird transform genutzt
+    display: inline-block; // Wichtig, damit der Text rotiert wird
+    margin-right: 100px;
+    }
+  }
+
+  .scroll-down {
+    span {
+      font-size: 22px;
+      margin-left: 100px;
+    //   line-height: 22;
+    }
+  }
+}
