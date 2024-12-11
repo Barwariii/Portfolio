@@ -1,0 +1,21 @@
+.my-skills-container {
+    height: 100vh;
+    box-sizing: border-box;
+    border: #000000 solid 4px;
+    margin: 250px 100px 0px 100px;
+    text-align: center;
+
+    .tittle {
+        font-family: 'Syne-ExtraBold';
+        font-size: 78px;
+        position: relative;
+        top: -50px;
+    }
+
+    .skill-item {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: start;
+        flex-direction: column;
+    }
+}

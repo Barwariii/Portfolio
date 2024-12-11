@@ -83,38 +83,29 @@ section {
   }
 }
 
-.my-img {
+.imgs {
   margin-top: 150px;
   .my-pic {
-    height: 600px;
-    display: block;
-    transition: outline 0.1s ease;
-
-
-    &:hover {
-        outline: #000000 solid 4px;
+    img {
+      height: 600px;
+      display: block;
+      transition: outline 0.1s ease;
+  
+  
+      &:hover {
+          outline: #000000 solid 4px;
+      }
     }
   }
 
   .arrow-left {
-    margin: 110px 0px 110px 0px;
-    width: 250px;
-    height: 250px;
-    position: relative;
-    left: 300px;
+    width: 100%;
+    img {
+      margin: 110px 0px 0px 0px;
+      width: 250px;
+      height: 250px;
+      position: relative;
+      left: 300px;
+    }
   }
 }
-
-// .arrow-left {
-//   display: flex;
-//   position: relative;
-//   width: 1239px;
-//   height: 300px;
-//   bottom: -600px;
-//   left: 101px;
-
-//   img {
-//     width: 100px;
-//     height: 100px;
-//   }
-// }

@@ -1,1 +1,16 @@
-<p>my-skills works!</p>
+<div class="my-skills-container">
+    <span class="tittle">My skills</span>
+
+    <!-- Richtiges *ngFor für Iteration -->
+    <div *ngFor="let skills of skillsIcons; let i = index" class="skill-item">
+        <img [src]="skills.image" [alt]="skills.name">
+        <span>{{ skills.name }}</span>
+    </div>
+
+    <!-- <div class="skills-icons">
+        @for (icon of skillsIcons; track $index) {
+            <img src="{{icon.image}}" alt="">
+            <span>{{icon.name}}</span>
+        }
+    </div> -->
+</div>
