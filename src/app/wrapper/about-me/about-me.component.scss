@@ -88,13 +88,12 @@ section {
   img {
     height: 500px;
     display: block;
-    transition: box-shadow 0.1s ease;
+    transition: outline 0.1s ease;
 
     // outline: #000000 solid 4px;
     // bottom: -10px;
     &:hover {
         outline: #000000 solid 4px;
-        // box-shadow: 4px 4px 4px 4px black;
     }
   }
 }
