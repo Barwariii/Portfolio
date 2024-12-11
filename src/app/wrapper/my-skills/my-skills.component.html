@@ -1,16 +1,30 @@
-<div class="my-skills-container">
-    <span class="tittle">My skills</span>
-
-    <!-- Richtiges *ngFor für Iteration -->
-    <div *ngFor="let skills of skillsIcons; let i = index" class="skill-item">
-        <img [src]="skills.image" [alt]="skills.name">
-        <span>{{ skills.name }}</span>
+<section>
+    <div class="my-skills-container">
+        <span class="tittle">My skills</span>
+    
+    <!-- <div class="skills-box">
+            <div *ngFor="let skills of skillsIcons; let i = index" class="skill-item">
+                <img [src]="skills.image" [alt]="skills.name">
+                <span>{{ skills.name }}</span>
+            </div>
+    </div> -->
+    
+        <div class="skills-box">
+            @for (icon of skillsIcons; track $index) {
+                <div class="skills-icons">
+                    <img class="icn" src="{{icon.image}}" alt="">
+                    <span class="skill-name">{{icon.name}}</span>
+                </div>
+            }
+            <div class="non-skill">
+                <img class="non-skill-icn" src="./../../../assets/img/icons/Property 1=Continued learning.png" alt="">
+                <span class="non-skill-text">Don’t see the skill you need? <a class="btn" href="#"> Contact me</a> I’m always ready to learn!</span>
+            </div>
+        </div>
     </div>
 
-    <!-- <div class="skills-icons">
-        @for (icon of skillsIcons; track $index) {
-            <img src="{{icon.image}}" alt="">
-            <span>{{icon.name}}</span>
-        }
-    </div> -->
-</div>
+    <!-- next section arrow right -->
+     <div class="arrow-right">
+        <img src="./../../../assets/img/arrow-right/Frame 3.png" alt="">
+     </div>
+</section>

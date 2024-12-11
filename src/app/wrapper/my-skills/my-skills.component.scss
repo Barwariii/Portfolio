@@ -1,8 +1,13 @@
-.my-skills-container {
+section {
     height: 100vh;
+}
+
+
+.my-skills-container {
+    // height: 100vh;
     box-sizing: border-box;
     border: #000000 solid 4px;
-    margin: 250px 100px 0px 100px;
+    margin: 350px 100px 0px 100px;
     text-align: center;
 
     .tittle {
@@ -11,11 +16,78 @@
         position: relative;
         top: -50px;
     }
+    
 
-    .skill-item {
+    .skills-box {
         display: flex;
-        justify-content: space-evenly;
-        align-items: start;
+        flex-wrap: wrap;
+        column-gap: 150px;
+        justify-content: center;
+        align-items: center;
+        margin: 50px 100px 100px 100px;
+    }
+
+    .skills-icons {
+        display: flex;
+        align-items: center;
         flex-direction: column;
+        padding-bottom: 50px;
+        // padding: 25px 50px 25px 50px;
+
+
+        .icn {
+            margin-bottom: 12px;
+            // width: 75px;
+            // height: 75px;
+        }
+
+        .skill-name {
+            font-family: 'Overpass-Bold';
+            font-size: 16px;
+            text-align: center;
+        }
+    }
+
+
+    .non-skill {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // margin-bottom: 16px;
+
+        .non-skill-icn {
+            width: 75px;
+            height: 75px;
+            margin-right: 24px;
+        }
+
+        .non-skill-text {
+            font-family: 'Overpass-Regular';
+            font-size: 22px;
+            font-weight: 400;
+            margin-top: 32px;
+
+            .btn {
+                text-decoration: none;
+                color: #00bc8f;
+
+                &:hover {
+                    font-weight: 700;
+                }
+
+            }
+        }
+    }
+}
+
+.arrow-right {
+    width: 100%;
+
+    img {
+        margin: 110px 0px 0px 0px;
+    width: 250px;
+    height: 250px;
+    position: relative;
+    left: 300px;
     }
 }
