@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { LandingPageComponent } from './wrapper/landing-page/landing-page.component';
+import { WrapperComponent } from './wrapper/wrapper.component';
+
 
 
 
@@ -9,7 +10,7 @@ import { LandingPageComponent } from './wrapper/landing-page/landing-page.compon
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, LandingPageComponent],
+  imports: [RouterOutlet, CommonModule, WrapperComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
