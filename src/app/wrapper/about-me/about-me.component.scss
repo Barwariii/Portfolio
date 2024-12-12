@@ -90,12 +90,21 @@ section {
       height: 600px;
       display: block;
       transition: outline 0.1s ease;
+      border: red solid 6px;
   
   
       &:hover {
+          display: block;
           outline: #000000 solid 4px;
       }
     }
+
+    // p {
+    //   height: 600px;
+    //   border: yellow solid 6px;
+    //   margin: -550px 0 0 50px;
+    //   z-index: 10;
+    // }
   }
 
   .arrow-left {

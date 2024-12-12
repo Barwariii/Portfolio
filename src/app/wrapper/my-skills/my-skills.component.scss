@@ -17,7 +17,7 @@ section {
         top: -50px;
     }
     
-
+// FIXME: fixe skills places and center them in one line
     .skills-box {
         display: flex;
         flex-wrap: wrap;
@@ -88,6 +88,6 @@ section {
     width: 250px;
     height: 250px;
     position: relative;
-    left: 300px;
+    left: 200px;
     }
 }

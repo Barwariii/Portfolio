@@ -1,0 +1,22 @@
+section {
+    height: 100vh;
+    margin: 100px 100px 0px 100px;
+
+    h3 {
+        font-family: 'Syne-ExtraBold';
+        font-size: 78px;
+        text-align: center;
+
+        &:hover {
+            color: #00bc8f;
+            cursor: default;
+        }
+    }
+
+    p {
+        font-family: 'Overpass-Regular';
+        text-align: center;
+        font-size: 22px;
+        margin: 32px 0px 0px 0px;
+    }
+}
