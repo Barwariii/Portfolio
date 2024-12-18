@@ -5,6 +5,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { MySkillsComponent } from './my-skills/my-skills.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { FooterComponent } from "../shared/footer/footer.component";
+
 
 
 
@@ -15,7 +17,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 @Component({
   selector: 'app-wrapper',
   standalone: true,
-  imports: [CommonModule, NavBarComponent, LandingPageComponent, AboutMeComponent, MySkillsComponent, PortfolioComponent],
+  imports: [CommonModule, NavBarComponent, LandingPageComponent, AboutMeComponent, MySkillsComponent, PortfolioComponent, FooterComponent, FooterComponent],
   templateUrl: './wrapper.component.html',
   styleUrl: './wrapper.component.scss'
 })

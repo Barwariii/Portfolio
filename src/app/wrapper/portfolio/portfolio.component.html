@@ -3,4 +3,29 @@
         <h3>Portfolio</h3>
         <p>Explore a selection of my work here - Interact with <br> projects to see my skills in action.<p>
     </div>
+    <div class="my-projects">
+        @for (project of projects; track $index) {
+
+            <div [ngClass]="{'reverse': project.isReverse}" class="project">
+                <img src="{{project.image}}" alt="">
+                <div class="border-div">
+                    <span class="border-hover"></span>
+                </div>
+
+                <div class="project-info-hover">
+                    <p class="project-name">{{project.name}}</p>
+                    <p class="project-Languages">{{project.Languages}}</p>
+                    <span class="project-description">{{project.description}}</span>
+                    <a class="btn" href="{{project.url}}" target="_blank">Github</a>
+                </div>
+
+                <p class="project-number">{{project.project_number}}</p>
+
+            </div>
+        }
+    </div>
+
+    <div class="arrow-left">
+        <img src="./assets/img/arrow-left/Group 3.png" alt="">
+    </div>
 </section>

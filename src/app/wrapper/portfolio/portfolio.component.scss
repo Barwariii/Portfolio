@@ -1,5 +1,5 @@
 section {
-    height: 100vh;
+    height: 100%;
     margin: 100px 100px 0px 100px;
 
     h3 {
@@ -19,4 +19,140 @@ section {
         font-size: 22px;
         margin: 32px 0px 0px 0px;
     }
+}
+
+
+.project {
+    position: relative; /* Wichtig für die Platzierung von .project-info-hover */
+    display: flex;
+    justify-content: space-between;
+    
+    img {
+        width: 700px;
+        height: 450px; /* Optional: Bildgröße anpassen */
+        display: block;
+        margin-bottom: 72px;
+        // border: red solid 6px;
+    }
+
+    // hover: black border over image
+    .border-hover {
+        position: absolute;
+        width: 700px;
+        height: 450px;
+        border: #000000 solid 6px;
+        bottom: 45px;
+        right: 500px;
+        background: none;
+        display: flex;
+        z-index: 1;
+    }
+          
+        &:hover {
+            .border-hover{
+              display: flex;
+            }
+        }
+
+    
+
+    .project-number {
+        margin: 0;
+        font-family: 'Syne-Bold';
+        font-size: 48px;
+        z-index: 1;
+        height: 60px;
+    }
+
+    .project-info-hover {
+        position: relative;
+        top: 35px;
+        right: -100px;
+        width: 600px;
+        height: 100%;
+        display: flex; /* Unsichtbar im Standardzustand */
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+
+        .project-name {
+            font-family: 'Syne-ExtraBold';
+            font-size: 45px;
+        }
+
+        .project-Languages {
+            font-family: 'Overpass-Regular';
+            font-size: 23px;
+            color: #00BC8F;
+            font-weight: 600;
+            margin: 24px 0px 24px 0px;
+
+        }
+
+        .project-description {
+            font-family: 'Overpass-Regular';
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .btn {
+            font-family: 'Overpass-Regular';
+            font-size: 23px;
+            text-decoration: none;
+            color: #000000;
+            font-weight: 600;
+            outline: #000000 solid 4px;
+            padding: 20px 60px 20px 60px;
+        }
+    }
+
+    &:hover {
+        .project-info-hover {
+            display: flex; /* Sichtbar machen beim Hover */
+        }
+    }
+
+    /* .reverse Klasse hinzufügen */
+    &.reverse {
+        flex-direction: row-reverse;
+
+        /* Bild und Text umkehren */
+        img {
+            margin-left: 20px;
+        }
+
+        .project-info-hover {
+            right: 0;
+            text-align: left;
+
+            /* Abstände für Child-Elemente */
+            .project-name,
+            .project-Languages,
+            .project-description,
+            .btn {
+                margin-left: 0 !important; /* Stell sicher, dass kein margin überschrieben wird */
+                margin-right: 20px; /* Statt margin-left für konsistentes Verhalten */
+            }
+        }
+
+        /* border-hover verschieben */
+        .border-hover {
+            left: 500px;
+            right: unset;
+        }
+    }
+
+    .arrow-left {
+        // width: 100%;
+        img {
+          margin: 110px 0px 0px 0px;
+          width: 250px;
+          height: 250px;
+          position: relative;
+          left: 600px;
+        }
+      }
 }

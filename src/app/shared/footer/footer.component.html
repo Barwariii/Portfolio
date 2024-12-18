@@ -1,1 +1,48 @@
-<p>footer works!</p>
+<!-- <footer> -->
+<div class="footer-container">
+  <h3 class="footer-tittle">Say Hi!</h3>
+  <div class="conatct-form-container">
+    <div class="form-text">
+      <span class="text-one">want to discuss a new Project?</span>
+      <span class="text-two">Say hello! let's discuss your ideas and make it happen</span>
+    </div>
+
+    <!-- contact form -->
+    <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="form-groups">
+      <div class="form-group">
+        <input #name="ngModel" [(ngModel)]="contactData.name" type="text" placeholder="Your name" name="name" required>
+        @if (!name.valid && name.touched) {
+        <div class="error-message">Your name is required</div>
+        <!-- <div class="error-icon"><i class="fas fa-exclamation-circle"></i></div> -->
+        }
+        <!-- @if (!name.valid && name.touched) {
+        <div class="valid-icon"><i class="fas fa-check-circle"></i></div>
+        } -->
+      </div>
+      <div class="form-group">
+        <input #email="ngModel" [(ngModel)]="contactData.email" type="email" name="email" placeholder=" Your email" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+        @if (!email.valid && email.touched) {
+          <div class="error-message">Your E-Mail is required</div>
+        }
+      </div>
+      <div class="form-group">
+        <textarea #message="ngModel" minlength="4" [(ngModel)]="contactData.message" name="message" class="message" placeholder="Your message" required></textarea>
+        @if (!message.valid && message.touched) {
+          <div class="error-message">Please enter a message</div>
+        }
+      </div>
+
+      <!-- checkbox and privacy policy -->
+      <div class="Privacy-container">
+        <input type="checkbox" id="privacy" name="privacy" required>
+        <label for="privacy">I've read the <a href="#">privacy policy</a> and agree to the processing of my data as
+          outlined.</label>
+      </div>
+
+      <!-- submit button -->
+       <input type="submit" value="Send message" name="Send message" class="submit-btn">
+      <!-- <button type="submit" value="submit">Send message</button> -->
+    </form>
+  </div>
+</div>
+<!-- </footer> -->

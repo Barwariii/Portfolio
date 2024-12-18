@@ -86,27 +86,31 @@ section {
 .imgs {
   margin-top: 150px;
   .my-pic {
+    margin: 0;
+    height: 600px;
     img {
       height: 600px;
       display: block;
       transition: outline 0.1s ease;
-      border: red solid 6px;
-  
-  
-      &:hover {
-          display: block;
-          outline: #000000 solid 4px;
-      }
     }
-
-    // p {
-    //   height: 600px;
-    //   border: yellow solid 6px;
-    //   margin: -550px 0 0 50px;
-    //   z-index: 10;
-    // }
   }
 
+  .border-hover {
+    position: relative;
+    height: 600px;
+    border: #000000 solid 6px;
+    bottom: 550px;
+    left: 50px;
+    background: none;
+    display: none;
+  }
+
+  &:hover {
+    .border-hover{
+      display: flex;
+    }
+  }
+  
   .arrow-left {
     width: 100%;
     img {
