@@ -119,6 +119,22 @@ section {
       height: 250px;
       position: relative;
       left: 300px;
+
+          // Animation hinzufügen
+      animation: moveArrow 1.5s infinite ease-in-out;
     }
   }
+
+  // Keyframes-Animation für die Bewegung
+@keyframes moveArrow {
+  0% {
+    transform: translateX(0) rotate(0deg); // Startposition
+  }
+  50% {
+    transform: translateX(-15px) rotate(-10deg); // Bewegung nach links & drehen
+  }
+  100% {
+    transform: translateX(0) rotate(0deg); // Zurück zur Startposition
+  }
+}
 }
