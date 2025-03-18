@@ -1,44 +1,114 @@
-section {
-    height: 100vh;
-}
-
-
 .my-skills-container {
     // height: 100vh;
     box-sizing: border-box;
     border: #000000 solid 4px;
-    margin: 350px 100px 0px 100px;
+    margin: 100px 100px 100px 100px;
     text-align: center;
+    max-width: 1440px;
 
     .tittle {
         font-family: 'Syne-ExtraBold';
         font-size: 78px;
         position: relative;
         top: -50px;
+        @media screen and (max-width: 730px) {
+          font-size: 56px;
+          
+        }
+
+        &:hover {
+          cursor: default;
+            color: #00bc8f;
+        }
     }
     
 // FIXME: fixe skills places and center them in one line
     .skills-box {
         display: flex;
         flex-wrap: wrap;
-        column-gap: 150px;
+        column-gap: 140px;
         justify-content: center;
         align-items: center;
         margin: 50px 100px 100px 100px;
+        @media screen and (max-width: 730px) {
+          column-gap: 70px;
+          
+        }
     }
 
     .skills-icons {
         display: flex;
         align-items: center;
         flex-direction: column;
+        width: 80px;
         padding-bottom: 50px;
+        overflow: hidden;
         // padding: 25px 50px 25px 50px;
 
 
-        .icn {
+        img {
             margin-bottom: 12px;
+            // transform: translate(0, 0) scale(1);
+            // transition: transform 0.3s ease-in-out;
+
+            // transform: translate(100px);
+            // translate: -100px;
+            // animation: 2s ease-in-out infinite;
+            // animation: moveSkillsicons 10s ease-in-out infinite;
+            // transition: 2s;
             // width: 75px;
             // height: 75px;
+        }
+
+        // Hover-Zustand: Animation aktivieren
+        &:hover img {
+        animation: moveSkillsicons 0.5s; // Animation beim Hover starten
+        }
+
+        @keyframes moveSkillsicons {
+          0% {
+            /* Default */
+            transform: translate(0, 0) scale(1); // الموضع الأصلي /* Stellvertretend für "Default: Variant2" */
+            animation-timing-function: cubic-bezier(0.3, -0.05, 0.7, -0.5);
+            animation-duration: 50ms;
+        }
+        20% {
+            /* Variant2 */
+            transform: translate(40px, 0) scale(1); // حركة خفيفة لليسار وتصغير بسيط /* Stellvertretend für den Übergang zu "Variant3" */
+            animation-delay: 1ms;
+            animation-timing-function: ease-out;
+            animation-duration: 50ms;
+        }
+        40% {
+            /* Variant3 */
+            transform: translate(50px, 0) scale(0.8); // حركة أكبر لليسار مع تصغير إضافي /* Stellvertretend für den Übergang zu "Variant4" */
+            animation-delay: 1ms;
+            animation-timing-function: ease-in;
+            animation-duration: 50ms;
+        }
+        60% {
+            /* Variant4 */
+            transform: translate(-50px, 0) scale(0.8); // عودة لليمين قليلاً مع تكبير بسيط /* Stellvertretend für den Übergang zu "Variant5" */
+            animation-delay: 1ms;
+            animation-timing-function: ease-in;
+            animation-duration: 50ms;
+        }
+        80% {
+            /* Variant5 */
+            transform: translate(-40px, 0) scale(1); // حركة أكبر لليمين مع تكبير إضافي /* Stellvertretend für den Übergang zu "Variant6" */
+            animation-delay: 1ms;
+            animation-timing-function: ease-in;
+            animation-duration: 50ms;
+        }
+        100% {
+            /* Variant6 -> zurück zu Default */
+            transform: translate(0, 0) scale(1); // العودة للموضع الأصلي بالحجم الطبيعي /* Stellvertretend für "Default" */
+            animation-delay: 800ms;
+            animation-timing-function: ease-in;
+            animation-duration: 10ms;
+        }
+
+            
         }
 
         .skill-name {
@@ -46,48 +116,145 @@ section {
             font-size: 16px;
             text-align: center;
         }
+
+        &:hover .skill-name{
+          color: #00bc8f;
+      }
     }
 
 
+    // .non-skill {
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     // margin-bottom: 16px;
+
+    //     .non-skill-icn {
+    //         width: 75px;
+    //         height: 75px;
+    //         margin-right: 24px;
+    //     }
+
+    //     .non-skill-text {
+    //         font-family: 'Overpass-Regular';
+    //         font-size: 22px;
+    //         font-weight: 400;
+    //         margin-top: 32px;
+
+    //         .btn {
+    //             text-decoration: none;
+    //             color: #00bc8f;
+
+    //             &:hover {
+    //                 font-weight: 700;
+    //             }
+    //         }
+    //               // Grüne Linie
+    //   &::after {
+    //     content: '';
+    //     position: absolute;
+    //     bottom: -3px; // Abstand unter dem Link
+    //     left: 0;
+    //     width: 100%; // Linie unter dem gesamten Link
+    //     height: 3px; // Dicke der Linie
+    //     background-color: green;
+    //     transform: scaleX(0); // Linie ist anfangs unsichtbar
+    //     transform-origin: right; // Animation startet von rechts
+    //     transition: transform 0.5s ease-out; // Animationseffekt
+    //   }
+
+    //   // Animation beim Hover
+    //   &:hover::after {
+    //     transform: scaleX(1); // Linie wird vollständig angezeigt
+    //     transform-origin: left; // Bewegung geht nach links
+    //   }
+    //     }
+    // }
     .non-skill {
         display: flex;
         align-items: center;
         justify-content: center;
-        // margin-bottom: 16px;
-
+      
         .non-skill-icn {
-            width: 75px;
-            height: 75px;
-            margin-right: 24px;
+          width: 75px;
+          height: 75px;
+          margin-right: 24px;
         }
-
+      
         .non-skill-text {
-            font-family: 'Overpass-Regular';
-            font-size: 22px;
-            font-weight: 400;
-            margin-top: 32px;
-
-            .btn {
-                text-decoration: none;
-                color: #00bc8f;
-
-                &:hover {
-                    font-weight: 700;
-                }
-
+          font-family: 'Overpass-Regular';
+          font-size: 22px;
+          font-weight: 400;
+          margin-top: 32px;
+      
+          .btn {
+            text-decoration: none;
+            color: #00bc8f;
+            position: relative; // Wichtig für die grüne Linie
+            display: inline-block; // Erforderlich für die Positionierung der Linie
+            transition: all 0.3s ease; // Einheitlicher Übergang
+            width: 130px; // Passt den Button an den Text an, bleibt jedoch fixiert
+            text-align: left; // Text bleibt links ausgerichtet
+            margin-left: 10px;
+            // transform-origin: left center; // Animation startet von links
+      
+            &:hover {
+                letter-spacing: 1px;
+              font-weight: 700; // Schrift wird fetter
             }
+      
+            // Grüne Linie als animiertes Pseudoelement
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: -3px; // Abstand unter dem Text
+              left: 0;
+              width: 40%; // Breite der Linie entspricht dem Text
+              height: 2.5px; // Dicke der Linie
+              background-color: #00bc8f;
+              transform: scaleX(0); // Unsichtbare Linie (skaliert auf 0)
+              transform-origin: left; // Startpunkt der Animation (rechts)
+              transition: transform 0.1s ease-out; // Übergangseffekt für die Linie
+            }
+      
+            // Linie wird beim Hover sichtbar und bewegt sich von rechts nach links
+            &:hover::after {
+                // width: 50%;
+              transform: scaleX(1) translateX(135%); // Linie wird vollständig angezeigt
+            }
+          }
         }
-    }
+      } 
 }
 
 .arrow-right {
-    width: 100%;
 
-    img {
-        margin: 110px 0px 0px 0px;
+    position: relative; 
     width: 250px;
-    height: 250px;
-    position: relative;
-    left: 200px;
+  
+    svg {
+      position: relative;
+      width: 236px;
+      height: 235px;
+      left: 250px;
+      // right: 500px;
+      bottom: 60px;
+
+    animation: moveArrowWithDelay 10s ease-in-out infinite; /* الحركة مع تأخير */
     }
+  // حركة السهم
+  @keyframes moveArrowWithDelay {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    15% {
+      transform: translate(100px, 100px) rotate(0deg); /* النقطة "ب" */
+    }
+    // 50% {
+    //   transform: translate(-20px, 20px) rotate(0deg);
+    // }
+    100% {
+      transform: translate(100px, 100px) rotate(0deg);
+    }
+  }
 }

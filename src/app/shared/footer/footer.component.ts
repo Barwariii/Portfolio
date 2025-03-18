@@ -31,11 +31,12 @@ export class FooterComponent {
   mailTest = true;
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    // endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://portfolio-bilal.com/src/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
-        'Content-Type': 'text/plain',
+        'Content-Type': 'text/plain',  // ändern zu: application/json oder text/plain
         responseType: 'text',
       },
     },

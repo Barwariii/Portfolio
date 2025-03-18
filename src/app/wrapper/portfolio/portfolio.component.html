@@ -7,8 +7,9 @@
         @for (project of projects; track $index) {
 
             <div [ngClass]="{'reverse': project.isReverse}" class="project">
-                <img src="{{project.image}}" alt="">
-                <div class="border-div">
+                <!-- <img src="{{project.image}}" alt=""> -->
+                <div class="project-img">
+                    <img src="{{project.image}}" alt="">
                     <span class="border-hover"></span>
                 </div>
 
@@ -16,16 +17,26 @@
                     <p class="project-name">{{project.name}}</p>
                     <p class="project-Languages">{{project.Languages}}</p>
                     <span class="project-description">{{project.description}}</span>
-                    <a class="btn" href="{{project.url}}" target="_blank">Github</a>
+                    <div class="buttons">
+                        <a class="btn" href="{{project.url}}" target="_blank">Github</a>
+                        <a class="btn" href="{{project.url}}" target="_blank">Live Test</a>
+                    </div>
                 </div>
 
-                <p class="project-number">{{project.project_number}}</p>
+                <div class="project-number">
+                    <p >{{project.project_number}}</p>
+                </div>
+                <!-- <p class="project-number">{{project.project_number}}</p> -->
 
             </div>
         }
     </div>
 
     <div class="arrow-left">
-        <img src="./assets/img/arrow-left/Group 3.png" alt="">
+        <!-- <img src="./assets/img/arrow-left/Group 3.png" alt=""> -->
+        <svg width="236" height="235" viewBox="0 0 236 235" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M42.1074 110.893V193.519H124.734" stroke="black" stroke-width="4" />
+            <path d="M194.313 41.3135L42.106 193.521" stroke="black" stroke-width="4" />
+        </svg>
     </div>
 </section>

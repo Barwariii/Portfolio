@@ -1,21 +1,28 @@
-// footer {
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   // display: flex;
   // height: 100vh;
   // background-color: #000000;
   // position: relative;
   // top: 400px;
-  // clip-path: polygon(0% 0%, 100% 15%, 100% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 15%, 100% 100%, 0% 100%);
+  background-color: #000000;
+  width: 100%;
   .footer-container {
     height: 1061px;
+    width: 1440px;
+    // max-width: 1440px;
     clip-path: polygon(0% 0%, 100% 13%, 100% 100%, 0% 100%);
     background-color: #000000;
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
 
     .footer-tittle {
       font-family: "Syne-ExtraBold";
       font-size: 78px;
-      color: #FFFCF3;
+      color: #fffcf3;
       background-color: #000000;
       margin: 150px 0 52px 100px;
       width: 462px;
@@ -41,16 +48,16 @@
         background-color: #000000;
 
         .text-one {
-          font-family: 'Overpass-Bold';
+          font-family: "Overpass-Bold";
           font-size: 32px;
           color: #00bc8f;
           background-color: #000000;
         }
-  
+
         .text-two {
-          font-family: 'Overpass-Regular';
+          font-family: "Overpass-Regular";
           font-size: 22px;
-          color: #FFFCF3;
+          color: #fffcf3;
           background-color: #000000;
           margin: 16px 0 0 16px;
         }
@@ -62,21 +69,22 @@
         .form-group {
           margin: 15px 25px 40px 25px;
           // position: absolute;
-          input, textarea {
+          input[type=text],[type=email],
+          textarea {
             border: none;
-            border-bottom: #FFFCF3 solid 2px;
+            border-bottom: #fffcf3 solid 2px;
             background-color: #000000;
-            color: #FFFCF3;
+            color: #fffcf3;
             max-width: 617px;
             min-width: 617px;
             width: 1500px;
             height: 50px;
-            
+            padding: 15px 25px;
 
             &::placeholder {
-              font-family: 'Overpass-Regular';
+              font-family: "Overpass-Regular";
               font-size: 16px;
-              color: #FFFCF3;
+              color: #fffcf3;
               margin-left: 24px;
             }
           }
@@ -86,9 +94,9 @@
           }
 
           .error-message {
-            color: #E61C40;
+            color: #e61c40;
             background-color: #000000;
-            font-family: 'Overpass-Regular';
+            font-family: "Overpass-Regular";
             font-size: 12px;
             position: absolute;
             margin-top: 8px;
@@ -99,17 +107,24 @@
         .Privacy-container {
           background-color: #000000;
           margin: 0px 25px 25px 25px;
+          display: flex;
+          align-items: center;
           input {
             width: 24px;
+            height: 24px;
+            margin: 3px;
           }
-          label, a {
-            color: #FFFCF3;
+          label,
+          a {
+            color: #fffcf3;
             background-color: #000000;
-            font-family: 'Overpass-Regular';
+            font-family: "Overpass-Regular";
+            font-weight: 400;
             font-size: 14px;
+            line-height: 16.8px;
             a {
               text-decoration: none;
-              color: #00BC8F;
+              color: #00bc8f;
             }
           }
         }
@@ -119,14 +134,19 @@
           justify-content: center;
           align-items: center;
           background-color: #000000;
+
+          //TODO: add shadow
+          // FIXME: fixe the btn and mkae it active after required field has ben filled and the privacy has been checked
           .submit-btn[type=submit] {
             background-color: #000000;
-            font-family: 'Overpass-Regular';
+            font-family: "Overpass-Regular";
             font-size: 23px;
-            color: #BBBBBB;
+            color: #ffffff;
             width: 269px;
             height: 68px;
-            border: #BBBBBB solid 4px;
+            border: #ffffff solid 4px;
+            opacity: 50%;
+            cursor: pointer;
           }
         }
       }
@@ -143,16 +163,18 @@
         display: flex;
         flex-direction: column;
         background-color: #000000;
+        gap: 16px;
         img {
           background-color: #000000;
           width: 66px;
-          height: 66px;
+          height: 66px; //TODO: change to 30px
         }
         span {
-          color: #FFFCF3;
+          color: #fffcf3;
           background-color: #000000;
-          font-family: 'Overpass-Regular';
+          font-family: "Overpass-Regular";
           font-size: 22px;
+          line-height: 26.4px;
         }
       }
 
@@ -173,13 +195,43 @@
           }
         }
 
-        span {
-          color: #FFFCF3;
+        .legal-notice-div {
+          width: 204px;
+          height: 40px;
           background-color: #000000;
-          font-family: 'Overpass-Regular';
-          font-size: 16px;
-          margin: 55px 10px 5px 10px;
+          color: #fffcf3;
+          display: flex;
+          justify-content: end;
+          padding: 5px 10px;
+          gap: 3px;
+          box-sizing: border-box;
+          span {
+            color: #fffcf3;
+            background-color: #000000;
+            font-family: "Overpass-Regular";
+            font-size: 16px;
+            padding-top: 16px;
+            line-height: 19.2px;
+          }
         }
+
+        // span {
+        //   color: #FFFCF3;
+        //   background-color: #000000;
+        //   font-family: 'Overpass-Regular';
+        //   font-size: 16px;
+        //   margin: 55px 10px 5px 10px;
+
+        //   display: flex;
+        //   height: 32px;
+        //   padding: 5px 10px;
+        //   gap: 3px;
+        //   position: absolute;
+        //   top: 70px;
+        //   left: 1138px;
+        //   width: 117px;
+        // }
       }
     }
   }
+}

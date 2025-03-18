@@ -2,7 +2,12 @@
     margin: 0;
     background-color: #FFFCF3;
     box-sizing: border-box;
-    max-width: 1440px;
+    // scrollbar-width: thin;
+    // scrollbar-color: #010101 #FFFCF3;
+    &.menu-active {
+        overflow: hidden !important;
+      }
+    // max-width: 1440px;
     // max-height: 100vh;
 }
 

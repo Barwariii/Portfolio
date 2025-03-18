@@ -2,8 +2,14 @@ section {
   display: flex;
   justify-content: space-between;
   // align-items: center;
-  height: 100vh;
+  // height: 100vh;
   margin: 0px 100px 0 100px;
+  max-width: 1440px;
+  box-sizing: border-box;
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    
+  }
 }
 
 .about-me-section {
@@ -13,7 +19,8 @@ section {
 
   h3 {
     font-family: "Syne-ExtraBold";
-    font-size: 78px;
+    // font-size: 78px;
+    font-size: clamp(70px, calc((100vw - 1290px) * 0.1 + 70px), 78px);
     font-weight: 800;
   }
 
@@ -24,10 +31,12 @@ section {
 
   .about-me-text {
     font-family: "Overpass-Regular";
-    font-size: 22px;
+    // font-size: 22px;
+    font-size: clamp(20px, calc((100vw - 1290px) * 0.1 + 20px), 22px);
     font-weight: 400;
     height: 200px; // Fixe Höhe
-    width: 650px; // Fixe Breite
+    // width: 650px; // Fixe Breite
+    width: clamp(550px, calc((100vw - 1000px) * 0.5 + 550px), 650px);
     display: flex; // Flexbox für Zentrierung
     justify-content: center; // Horizontale Zentrierung
     align-items: center; // Vertikale Zentrierung
@@ -69,72 +78,193 @@ section {
     font-weight: 400;
     padding: 20px 60px;
     border: #000000 solid 4px;
-
-    transition: width 0.3s ease; // Übergangseffekt nur für die Breite
-    // width: 200px; // Startbreite
-    height: auto; // Höhe bleibt stabil (basierend auf Padding)
+    // display: inline-block;
+    // box-sizing: border-box;
+    transition: padding 0.3s ease-out, font-weight 0.08s ease-out; // تأثير العرض والطول
 
     &:hover {
-      cursor: pointer;
-      padding: 20px 80px;
-      // transform: scale(1.1); // Button wird größer
-      // width: 150px; // Neue Breite beim Hover
+      padding: 20px 80px; // زيادة عرض الزر
+      font-weight: 900;
+      // border-style: groove;
     }
   }
 }
 
 .imgs {
-  margin-top: 150px;
+  // margin-top: 150px;
+  margin: 150px 0 100px 0;
   .my-pic {
-    margin: 0;
-    height: 600px;
+    // margin: 0 0 110px 0;
+    // height: 600px;
     img {
-      height: 600px;
+      // height: 600px;
+      height: clamp(400px, calc((100vw - 1000px) * 0.5 + 400px), 600px);
       display: block;
       transition: outline 0.1s ease;
+    
+      @media screen and (max-width: 1000px) {
+        height: clamp(400px, calc((200vw - 1000px) * 0.5 + 400px), 600px);
+        // height: 600px;
+      }
     }
   }
 
   .border-hover {
     position: relative;
-    height: 600px;
+    // height: 600px;
+    height: clamp(400px, calc((100vw - 1000px) * 0.5 + 400px), 600px);
+    width: clamp(400px, calc((100vw - 1000px) * 0.5 + 400px), 600px);
     border: #000000 solid 6px;
-    bottom: 550px;
-    left: 50px;
+    // bottom: 550px;
+    bottom: clamp(380px, calc((100vw - 1000px) * 0.5 + 380px), 580px);
+    // left: 50px;
+    left: clamp(0px, calc((100vw - 1000px) * 0.05 + 10px), 50px);
     background: none;
-    display: none;
+    display: flex;
+    @media screen and (max-width: 1000px) {
+      height: clamp(400px, calc((200vw - 1000px) * 0.5 + 400px), 600px);
+      width: clamp(400px, calc((200vw - 1000px) * 0.5 + 400px), 600px);
+      bottom: clamp(350px, calc((200vw - 1000px) * 0.5 + 350px), 550px);
+    }
+    // @media screen and (max-width: 1290px) {
+    //   height: 400px;
+    //   bottom: 350px;
+    // }
   }
 
   &:hover {
-    .border-hover{
+    .border-hover {
       display: flex;
     }
   }
-  
-  .arrow-left {
-    width: 100%;
-    img {
-      margin: 110px 0px 0px 0px;
-      width: 250px;
-      height: 250px;
-      position: relative;
-      left: 300px;
 
-          // Animation hinzufügen
-      animation: moveArrow 1.5s infinite ease-in-out;
+
+  .arrow-left {
+    position: relative; /* السهم ثابت في الشاشة */
+    // top: 10%; /* النقطة "أ" */
+    // left: 50%; /* في منتصف الشاشة أفقيًا */
+    transform: translateX(-50%);
+    // z-index: 1000;
+    display: flex;
+    margin-bottom: -250px;
+  
+    svg {
+      position: relative;
+      width: 236px;
+      height: 235px;
+      left: 300px;
+      // right: -500px;
+      // left: clamp(100px, calc((100vw - 500px) * 0.5 + 100px), 500px);
+      bottom: 300px;
+      // animation: moveArrow 2s ease-in-out infinite forwards; /* حركة مستمرة بدون العودة للخلف */
+
+          /* الحركة */
+    // animation: moveArrow 2s ease-in-out forwards; /* الحركة */
+    // animation-delay: 0s; /* بداية الحركة مباشرة */
+    // animation-iteration-count: infinite; /* عدد المرات غير محدود */
+    // animation-direction: normal; /* لا عكس للحركة */
+    // animation-fill-mode: forwards; /* يبقى في النهاية */
+    // animation-play-state: running; /* بدء الحركة */
+
+    /* إضافة تأخير بين كل دورة */
+    // animation: moveArrow 2s ease-in-out forwards, pause 5s steps(1) infinite;
+    animation: moveArrowWithDelay 10s ease-in-out infinite; /* الحركة مع تأخير */
     }
   }
+  
+  // حركة السهم
+  @keyframes moveArrowWithDelay {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    15% {
+      transform: translate(-100px, 100px) rotate(0deg); /* النقطة "ب" */
+    }
+    // 50% {
+    //   transform: translate(-20px, 20px) rotate(0deg);
+    // }
+    100% {
+      transform: translate(-100px, 100px) rotate(0deg);
+    }
+  }
+  
+  
+  // .arrow-left {
+  //   width: 100%;
+  //   position: relative;
+  //   // img {
+  //   //   margin: 110px 0px 0px 0px;
+  //   //   width: 250px;
+  //   //   height: 250px;
+  //   //   position: relative;
+  //   //   left: 300px;
 
+  //   //   // Animation hinzufügen
+  //   //   animation: moveArrow 1.5s infinite ease-in-out;
+  //   // }
+
+  //   svg {
+  //     position: relative;
+  //     // margin: 110px 0px 0px 0px;
+  //     width: 250px;
+  //     height: 250px;
+  //     left: 300px;
+      
+  //     clip-path: inset(0 0 0 0); // يبدأ كخط ظاهر بالكامل
+  //     // transition: width 0.09s ease-in-out, clip-path 0.09s ease-in-out; // حركتان للعرض والاختفاء
+  //     animation: moveArrow 3s infinite ease-in-out forwards;
+  //     animation-direction: normal; // Ensure the animation runs in the forward direction each time
+  //     // animation-fill-mode: forwards;
+
+  //     &::after {
+  //       content: "";
+  //       position: absolute;
+  //       width: 100%; // الخط الأفقي يمتد بشكل كامل
+  //       clip-path: inset(0 0 0 0); // الجزء الأمامي يختفي تدريجيًا أثناء الحركة
+  //     }
+  //   }
+  // }
+
+//   @keyframes appear {
+//     from {
+//       opacity: 0;
+//       scale: 0;
+//       // clip-path: inset(0 0 0 0);
+//     }
+//     to {
+//       // clip-path: inset(0 100% 100% 0);}
+//       opacity: 1;
+//       scale: 1;
+//   }
+//  }
+
+  // svg {
+  //   animation: appear 3s infinite ease-in-out;
+  // }
   // Keyframes-Animation für die Bewegung
-@keyframes moveArrow {
-  0% {
-    transform: translateX(0) rotate(0deg); // Startposition
-  }
-  50% {
-    transform: translateX(-15px) rotate(-10deg); // Bewegung nach links & drehen
-  }
-  100% {
-    transform: translateX(0) rotate(0deg); // Zurück zur Startposition
-  }
-}
+  // @keyframes moveArrow {
+  //   0% {
+  //     // margin-top: 0; // Startposition
+  //     clip-path: inset(0 0 0 0);
+  //   }
+  //   50% {
+  //     // margin-top: 20px; // Bewegung nach links & drehen
+  //     clip-path: inset(0 100% 100% 0);
+  //   }
+  //   100% {
+  //     // margin-top: 0; // Zurück zur Startposition
+  //     clip-path: inset(0 0 0 0);
+  //   }
+  // }
+  // @keyframes moveArrow {
+  //   0% {
+  //     transform: translateX(0) rotate(0deg); // Startposition
+  //   }
+  //   50% {
+  //     transform: translateX(15px) rotate(0deg); // Bewegung nach links & drehen
+  //   }
+  //   100% {
+  //     transform: translateX(0) rotate(0deg); // Zurück zur Startposition
+  //   }
+  // }
 }

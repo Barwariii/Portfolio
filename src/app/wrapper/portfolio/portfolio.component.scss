@@ -1,23 +1,35 @@
 section {
+    position: relative;
     height: 100%;
-    margin: 100px 100px 0px 100px;
+    max-width: 1440px;
+    width: 100%;
+    margin: 50px 100px 0px 100px;
+    padding: 0;
 
-    h3 {
-        font-family: 'Syne-ExtraBold';
-        font-size: 78px;
+
+    .portfolio-info {
         text-align: center;
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
 
-        &:hover {
-            color: #00bc8f;
-            cursor: default;
+        h3 {
+            font-family: 'Syne-ExtraBold';
+            font-size: 78px;
+            text-align: center;
+    
+            &:hover {
+                color: #00bc8f;
+                cursor: default;
+            }
         }
-    }
-
-    p {
-        font-family: 'Overpass-Regular';
-        text-align: center;
-        font-size: 22px;
-        margin: 32px 0px 0px 0px;
+    
+        p {
+            font-family: 'Overpass-Regular';
+            text-align: center;
+            font-size: 22px;
+            margin: 32px 0px 0px 0px;
+        }
     }
 }
 
@@ -26,34 +38,62 @@ section {
     position: relative; /* Wichtig für die Platzierung von .project-info-hover */
     display: flex;
     justify-content: space-between;
+    // flex-direction: column;
+    // margin: 0px 100px;
+    margin: 40px clamp(40px, (100vw - 1150px) * 0.05 + 40px, 100px);
+    @media screen and (max-width: 1000px) {
+      flex-direction: column;
+      
+    }
     
-    img {
-        width: 700px;
-        height: 450px; /* Optional: Bildgröße anpassen */
-        display: block;
-        margin-bottom: 72px;
-        // border: red solid 6px;
-    }
 
-    // hover: black border over image
-    .border-hover {
-        position: absolute;
-        width: 700px;
-        height: 450px;
-        border: #000000 solid 6px;
-        bottom: 45px;
-        right: 500px;
-        background: none;
-        display: flex;
-        z-index: 1;
-    }
-          
-        &:hover {
-            .border-hover{
-              display: flex;
-            }
+    .project-img {
+        position: relative;
+        img {
+            // width: 620px;
+            width: clamp(400px, calc((100vw - 1000px) * 0.5 + 400px), 620px);
+            // height: 393px; /* Optional: Bildgröße anpassen */
+            height: clamp(300px, calc((100vw - 1000px) * 0.5 + 300px), 393px);
+            display: block;
+            margin-bottom: 72px;
+            // border: red solid 6px;
         }
+    
+        // hover: black border over image
+        // .border-hover {
+        //     position: absolute;
+        //     // width: 620px;
+        //     width: clamp(400px, calc((100vw - 1000px) * 0.5 + 400px), 620px);
+        //     // height: 393px;
+        //     height: clamp(300px, calc((100vw - 1000px) * 0.5 + 300px), 393px);
+        //     border: #000000 solid 6px;
+        //     bottom: 45px;
+        //     left: 50px;
+        //     background: none;
+        //     display: none;
+        //     z-index: 1;
+        // }
+              
+            // &:hover {
+            //     .border-hover{
+            //       display: flex;
+            //     }
+            // }
+    }
 
+    .border-hover {
+      position: absolute;
+      // width: 620px;
+      width: clamp(400px, calc((100vw - 1000px) * 0.5 + 400px), 620px);
+      // height: 393px;
+      height: clamp(300px, calc((100vw - 1000px) * 0.5 + 300px), 393px);
+      border: #000000 solid 6px;
+      bottom: 45px;
+      left: 50px;
+      background: none;
+      display: none;
+      z-index: 1;
+  }
     
 
     .project-number {
@@ -62,27 +102,46 @@ section {
         font-size: 48px;
         z-index: 1;
         height: 60px;
+        position: relative;
+
+        p {
+          position: absolute;
+          right: clamp(-60px, (100vw - 1150px) * -0.05 - 20px, -20px);
+          // right: -60px;
+          // @media screen and (max-width: 1100px) {
+          //   right: -20px;
+            
+          // }
+        }
     }
 
     .project-info-hover {
         position: relative;
-        top: 35px;
-        right: -100px;
-        width: 600px;
-        height: 100%;
-        display: flex; /* Unsichtbar im Standardzustand */
+        // width: 501px;
+        width: clamp(400px, calc((100vw - 1000px) * 0.5 + 400px), 501px);
+        height: 339px;
+        // left: 100px;
+        left: clamp(80px, calc((100vw - 1300px) * 0.05 + 80px), 100px);
+        top: 61px;
+        display: none; /* Unsichtbar im Standardzustand */
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        text-align: center;
+        // text-align: left;
         padding: 10px;
+        @media screen and (max-width: 1000px) {
+          margin-bottom: 50px;
+          
+        }
 
         .project-name {
             font-family: 'Syne-ExtraBold';
             font-size: 45px;
+            width: 100%;
         }
 
         .project-Languages {
+            width: 100%;
             font-family: 'Overpass-Regular';
             font-size: 23px;
             color: #00BC8F;
@@ -98,61 +157,144 @@ section {
             margin-bottom: 24px;
         }
 
-        .btn {
-            font-family: 'Overpass-Regular';
-            font-size: 23px;
-            text-decoration: none;
-            color: #000000;
-            font-weight: 600;
-            outline: #000000 solid 4px;
-            padding: 20px 60px 20px 60px;
+        .buttons {
+            display: flex;
+            gap: 32px;
+            width: 100%;
+            justify-content: center;
+            .btn {
+                font-family: 'Overpass-Regular';
+                font-size: 23px;
+                text-decoration: none;
+                color: #000000;
+                font-weight: 600;
+                outline: #000000 solid 4px;
+                // padding: 20px 60px 20px 60px;
+                padding: 20px clamp(40px, (100vw - 1150px) * 0.05 + 40px, 60px);
+                white-space: nowrap;
+                // @media screen and (max-width: 1150px) {
+                //   padding: 20px 40px 20px 40px;
+                  
+                // }
+            }
         }
     }
 
-    &:hover {
-        .project-info-hover {
-            display: flex; /* Sichtbar machen beim Hover */
-        }
-    }
+    // &:hover {
+    //     .project-info-hover,
+    //     .border-hover {
+    //         display: flex; /* Sichtbar machen beim Hover */
+    //     }
+    // }
 
     /* .reverse Klasse hinzufügen */
     &.reverse {
         flex-direction: row-reverse;
-
-        /* Bild und Text umkehren */
-        img {
-            margin-left: 20px;
+        @media screen and (max-width: 1000px) {
+          flex-direction: column;
         }
+        // display: flex;
+        // justify-content: space-between;
+        // flex-direction: column;
 
-        .project-info-hover {
-            right: 0;
-            text-align: left;
 
-            /* Abstände für Child-Elemente */
+        .project-img {
+            img {
+              margin-left: unset;
+              margin-right: 0; /* تأكد من أن الصورة لا تحتوي على مسافة زائدة */
+            }
+      
+            .border-hover {
+              left: unset; /* إزالة الموضع الافتراضي */
+              right: 50px; /* وضع الحدود على اليمين */
+            }
+          }
+      
+          .project-info-hover {
+            display: none; 
+            position: relative;
+            left: -100px;
+            left: clamp(-80px, calc((100vw - 1300px) * 0.05 + -80px), -100px);
+            // margin: 10px 0px 80px 0px;
+      
             .project-name,
             .project-Languages,
             .project-description,
-            .btn {
-                margin-left: 0 !important; /* Stell sicher, dass kein margin überschrieben wird */
-                margin-right: 20px; /* Statt margin-left für konsistentes Verhalten */
+            .buttons {
+              margin-left: unset; /* إزالة أي هوامش لليسار */
+              margin-right: 0; /* تأكد من أن الهوامش صحيحة */
             }
-        }
-
-        /* border-hover verschieben */
-        .border-hover {
-            left: 500px;
+          }
+      
+          .project-number {
+            text-align: right; /* محاذاة الرقم لليمين */
             right: unset;
-        }
+            left: 100px;
+          }
     }
 
-    .arrow-left {
-        // width: 100%;
-        img {
-          margin: 110px 0px 0px 0px;
-          width: 250px;
-          height: 250px;
-          position: relative;
-          left: 600px;
-        }
+    &:hover {
+      .project-info-hover,
+      .border-hover {
+          display: flex; /* Sichtbar machen beim Hover */
       }
+  }
+
+    // .arrow-left {
+    //     // width: 100%;
+    //     img {
+    //       margin: 110px 0px 0px 0px;
+    //       width: 250px;
+    //       height: 250px;
+    //       position: relative;
+    //       left: 600px;
+    //     }
+    //   }
 }
+
+.arrow-left {
+    position: relative; /* السهم ثابت في الشاشة */
+    // top: 10%; /* النقطة "أ" */
+    // left: 50%; /* في منتصف الشاشة أفقيًا */
+    transform: translateX(-50%);
+    // z-index: 1000;
+    display: none;
+  
+    svg {
+      position: relative;
+      width: 236px;
+      height: 235px;
+      left: 1700px;
+    //   right: -500px;
+      bottom: 20px;
+      // animation: moveArrow 2s ease-in-out infinite forwards; /* حركة مستمرة بدون العودة للخلف */
+
+          /* الحركة */
+    // animation: moveArrow 2s ease-in-out forwards; /* الحركة */
+    // animation-delay: 0s; /* بداية الحركة مباشرة */
+    // animation-iteration-count: infinite; /* عدد المرات غير محدود */
+    // animation-direction: normal; /* لا عكس للحركة */
+    // animation-fill-mode: forwards; /* يبقى في النهاية */
+    // animation-play-state: running; /* بدء الحركة */
+
+    /* إضافة تأخير بين كل دورة */
+    // animation: moveArrow 2s ease-in-out forwards, pause 5s steps(1) infinite;
+    animation: moveArrowWithDelay 10s ease-in-out infinite; /* الحركة مع تأخير */
+    }
+  }
+  
+  // حركة السهم
+  @keyframes moveArrowWithDelay {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    15% {
+      transform: translate(-100px, 100px) rotate(0deg); /* النقطة "ب" */
+    }
+    // 50% {
+    //   transform: translate(-20px, 20px) rotate(0deg);
+    // }
+    100% {
+      transform: translate(-100px, 100px) rotate(0deg);
+    }
+  }

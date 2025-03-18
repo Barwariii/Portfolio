@@ -16,4 +16,9 @@ import { WrapperComponent } from './wrapper/wrapper.component';
 })
 export class AppComponent {
   title = 'portfolio';
+  translate: any;
+
+  public switchLanguage(language: string): void {
+    this.translate.use(language);
+}
 }
