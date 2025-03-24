@@ -8,7 +8,7 @@ section {
   box-sizing: border-box;
   margin: 0;
   padding-top: 100px;
-  height: 100%;
+  height: 100vh;
   // }
 
   .general-text {
@@ -18,14 +18,16 @@ section {
 
     h1 {
       font-family: "Syne-ExtraBold";
-      font-size: 128px;
+      // font-size: 128px;
+      // font-size: clamp(112px, calc((100vw - 1000px) * 0.1 + 86px), 128px);
+      font-size: clamp(24px, calc((100vw - 1000px) * 0.1 + 104px), 128px);
       font-weight: 800;
       letter-spacing: -2.5%; // Buchstabenabstand gemäß Mockup
       //   line-height: 128px;
-      @media screen and (max-width: 1200px) {
-        font-size: 78px;
-        
-      }
+      // @media screen and (max-width: 1200px) {
+      //   font-size: 78px;
+
+      // }
     }
 
     .line {
@@ -34,14 +36,25 @@ section {
       justify-content: center;
       gap: 24px;
       box-sizing: border-box;
+      @media screen and (max-width: 383px) {
+        gap: 0px;
+      }
       p {
         background-color: #000000;
         height: 3px;
-        width: 600px;
+        // width: 600px;
+        width: clamp(450px, calc((100vw - 1000px) * 0.5 + 450px), 600px);
+        @media screen and (max-width: 1000px) {
+          width: clamp(400px, calc((100vw - 700px) * 0.5 + 300px), 600px);
+        }
+        @media screen and (max-width: 700px) {
+          width: clamp(200px, calc((100vw - 400px) * 0.5 + 50%), 600px);
+        }
       }
       span {
         font-family: "Overpass";
-        font-size: 48px;
+        // font-size: 48px;
+        font-size: clamp(16px, calc((100vw - 700px) * 0.1 + 23px), 48px);
         font-weight: 700;
         color: #00bc8f;
       }
@@ -58,17 +71,28 @@ section {
     height: 400px;
     font-family: "Overpass-Light";
     font-weight: 300;
-    padding: 0 100px 0 100px;
+    padding: 0 50px 0 50px;
 
     .mail {
-      display: flex;
-      align-items: center; 
-      justify-content: center; 
-      width: 0; 
+      // display: flex;
+      // align-items: center;
+      // justify-content: center;
+      position: relative;
+      // width: 0;
       span {
         font-size: 22px;
-        transform: rotate(-90deg); // Hier wird transform genutzt
+        // transform: rotate(-90deg);
+        // transform-origin: center;
+        // display: inline-block;
+        // width: max-content;
+        /* width: max-content; */
+        position: absolute;
+        left: clamp(-130px, (100vw - 1440px) * 0.5 + 0px, 0px);
+        top: 50%;
+        transform: rotate(-90deg) translateY(-50%);
         transform-origin: center;
+        display: inline-block;
+        width: max-content;
       }
     }
 

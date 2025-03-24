@@ -1,177 +1,285 @@
 section {
   display: flex;
   justify-content: space-between;
-  // align-items: center;
-  // height: 100vh;
-  margin: 0px 100px 0 100px;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 70px 100px 0 100px;
   max-width: 1440px;
   box-sizing: border-box;
-  @media screen and (max-width: 1000px) {
-    flex-direction: column;
-    
-  }
-}
 
-.about-me-section {
-  // font-family: "Syne-ExtraBold";
-  // font-size: 78px;
-  // font-weight: 800;
+  .about-me {
+    display: flex;
+    .about-me-section {
+      h3 {
+        font-family: "Syne-ExtraBold";
+        font-size: clamp(70px, calc((100vw - 1290px) * 0.1 + 70px), 78px);
+        font-weight: 800;
+      }
 
-  h3 {
-    font-family: "Syne-ExtraBold";
-    // font-size: 78px;
-    font-size: clamp(70px, calc((100vw - 1290px) * 0.1 + 70px), 78px);
-    font-weight: 800;
-  }
+      h3:hover {
+        color: #00bc8f;
+        cursor: default;
+      }
 
-  h3:hover {
-    color: #00bc8f;
-    cursor: default;
-  }
-
-  .about-me-text {
-    font-family: "Overpass-Regular";
-    // font-size: 22px;
-    font-size: clamp(20px, calc((100vw - 1290px) * 0.1 + 20px), 22px);
-    font-weight: 400;
-    height: 200px; // Fixe Höhe
-    // width: 650px; // Fixe Breite
-    width: clamp(550px, calc((100vw - 1000px) * 0.5 + 550px), 650px);
-    display: flex; // Flexbox für Zentrierung
-    justify-content: center; // Horizontale Zentrierung
-    align-items: center; // Vertikale Zentrierung
-    box-sizing: border-box; // Padding/Border in der Größe berücksichtigen
-    padding: 10px; // Optional: Abstand innerhalb des Quadrats
-    overflow-wrap: break-word; // Zeilenumbruch bei langen Wörtern
-    margin: 32px 0px 32px 0px;
-  }
-}
-
-.about-me-icn {
-  display: flex;
-  align-items: center;
-  margin-top: 24px;
-  font-family: "Overpass-Regular";
-  font-size: 22px;
-  font-weight: 400;
-  text-align: center;
-  color: #000000;
-
-  img {
-    width: 40px;
-    height: 40px;
-  }
-}
-
-.btn-div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 56px;
-
-  .btn {
-    text-align: center;
-    text-decoration: none;
-    color: #000000;
-    font-family: "Overpass-Regular";
-    font-size: 23px;
-    font-weight: 400;
-    padding: 20px 60px;
-    border: #000000 solid 4px;
-    // display: inline-block;
-    // box-sizing: border-box;
-    transition: padding 0.3s ease-out, font-weight 0.08s ease-out; // تأثير العرض والطول
-
-    &:hover {
-      padding: 20px 80px; // زيادة عرض الزر
-      font-weight: 900;
-      // border-style: groove;
-    }
-  }
-}
-
-.imgs {
-  // margin-top: 150px;
-  margin: 150px 0 100px 0;
-  .my-pic {
-    // margin: 0 0 110px 0;
-    // height: 600px;
-    img {
-      // height: 600px;
-      height: clamp(400px, calc((100vw - 1000px) * 0.5 + 400px), 600px);
-      display: block;
-      transition: outline 0.1s ease;
-    
-      @media screen and (max-width: 1000px) {
-        height: clamp(400px, calc((200vw - 1000px) * 0.5 + 400px), 600px);
-        // height: 600px;
+      .about-me-text {
+        font-family: "Overpass-Regular";
+        font-size: clamp(20px, calc((100vw - 1290px) * 0.1 + 20px), 22px);
+        font-weight: 400;
+        height: 200px; // Fixe Höhe
+        width: clamp(550px, calc((100vw - 1000px) * 0.5 + 550px), 650px);
+        display: flex; // Flexbox für Zentrierung
+        justify-content: center; // Horizontale Zentrierung
+        align-items: center; // Vertikale Zentrierung
+        box-sizing: border-box; // Padding/Border in der Größe berücksichtigen
+        padding: 10px; // Optional: Abstand innerhalb des Quadrats
+        overflow-wrap: break-word; // Zeilenumbruch bei langen Wörtern
+        margin: 32px 0px 32px 0px;
       }
     }
-  }
 
-  .border-hover {
-    position: relative;
-    // height: 600px;
-    height: clamp(400px, calc((100vw - 1000px) * 0.5 + 400px), 600px);
-    width: clamp(400px, calc((100vw - 1000px) * 0.5 + 400px), 600px);
-    border: #000000 solid 6px;
-    // bottom: 550px;
-    bottom: clamp(380px, calc((100vw - 1000px) * 0.5 + 380px), 580px);
-    // left: 50px;
-    left: clamp(0px, calc((100vw - 1000px) * 0.05 + 10px), 50px);
-    background: none;
-    display: flex;
-    @media screen and (max-width: 1000px) {
-      height: clamp(400px, calc((200vw - 1000px) * 0.5 + 400px), 600px);
-      width: clamp(400px, calc((200vw - 1000px) * 0.5 + 400px), 600px);
-      bottom: clamp(350px, calc((200vw - 1000px) * 0.5 + 350px), 550px);
-    }
-    // @media screen and (max-width: 1290px) {
-    //   height: 400px;
-    //   bottom: 350px;
-    // }
-  }
-
-  &:hover {
-    .border-hover {
+    .about-me-icn {
       display: flex;
+      align-items: center;
+      margin-top: 24px;
+      font-family: "Overpass-Regular";
+      font-size: 22px;
+      font-weight: 400;
+      text-align: center;
+      color: #000000;
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    .btn-div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 56px;
+
+      .btn {
+        text-align: center;
+        text-decoration: none;
+        color: #000000;
+        font-family: "Overpass-Regular";
+        font-size: 23px;
+        font-weight: 400;
+        padding: 20px 60px;
+        border: #000000 solid 4px;
+        transition: padding 0.3s ease-out, font-weight 0.08s ease-out;
+
+        &:hover {
+          padding: 20px 80px;
+          font-weight: 900;
+        }
+      }
+    }
+
+    .imgs {
+      margin: 150px 0 100px 0;
+      max-height: 600px;
+      .my-pic {
+        margin-bottom: clamp(-50px, (100vw - 100%) * 0.5 + 100px, -100px);
+        max-height: 600px;
+        img {
+          height: clamp(400px, calc((100vw - 1000px) * 0.5 + 400px), 600px);
+          display: block;
+          transition: outline 0.1s ease;
+        }
+      }
+
+      .border-hover {
+        position: relative;
+        height: clamp(400px, calc((100vw - 1000px) * 0.5 + 400px), 600px);
+        width: clamp(400px, calc((100vw - 1000px) * 0.5 + 400px), 600px);
+        border: #000000 solid 6px;
+        bottom: clamp(380px, calc((100vw - 1000px) * 0.5 + 380px), 580px);
+        left: clamp(0px, calc((100vw - 1000px) * 0.05 + 10px), 50px);
+        background: none;
+        display: flex;
+      }
+
+      &:hover {
+        .border-hover {
+          display: flex;
+        }
+      }
+
+      // .arrow-left {
+      //   // position: relative; /* السهم ثابت في الشاشة */
+      //   // transform: translateX(-50%);
+      //   display: flex;
+      //   // margin-bottom: -250px;
+      //   position: relative;
+      //   // bottom: 250px;
+      //   bottom: clamp(250px, calc(100vw - 1440px) * 0.5 + 400px, 350px);
+      //   animation: _ngcontent-ng-c2872076331_moveArrowWithDelay 10s ease-in-out
+      //     infinite;
+
+      //   svg {
+      //     // position: relative;
+      //     // width: 236px;
+      //     // height: 235px;
+      //     // left: 300px;
+      //     // bottom: 300px;
+      //     // @media screen and (max-width: 1000px) and (min-width: 320px) {
+      //     //   left: clamp(600px, calc((100vw - 1000px) * 0.05 + 10px), 800px);
+      //     //   margin-bottom: -100px;
+      //     // }
+      //     // animation: moveArrow 2s ease-in-out infinite forwards; /* حركة مستمرة بدون العودة للخلف */
+
+      //     /* الحركة */
+      //     // animation: moveArrow 2s ease-in-out forwards; /* الحركة */
+      //     // animation-delay: 0s; /* بداية الحركة مباشرة */
+      //     // animation-iteration-count: infinite; /* عدد المرات غير محدود */
+      //     // animation-direction: normal; /* لا عكس للحركة */
+      //     // animation-fill-mode: forwards; /* يبقى في النهاية */
+      //     // animation-play-state: running; /* بدء الحركة */
+
+      //     /* إضافة تأخير بين كل دورة */
+      //     // animation: moveArrow 2s ease-in-out forwards, pause 5s steps(1) infinite;
+      //     // animation: moveArrowWithDelay 10s ease-in-out infinite; /* الحركة مع تأخير */
+      //   }
+      // }
+
+      // // حركة السهم
+      // @keyframes moveArrowWithDelay {
+      //   0% {
+      //     transform: translate(0, 0) rotate(0deg);
+      //   }
+      //   15% {
+      //     transform: translate(-100px, 100px) rotate(0deg); /* النقطة "ب" */
+      //   }
+      //   // 50% {
+      //   //   transform: translate(-20px, 20px) rotate(0deg);
+      //   // }
+      //   100% {
+      //     transform: translate(-100px, 100px) rotate(0deg);
+      //   }
+      // }
+
+      // .arrow-left {
+      //   width: 100%;
+      //   position: relative;
+      //   // img {
+      //   //   margin: 110px 0px 0px 0px;
+      //   //   width: 250px;
+      //   //   height: 250px;
+      //   //   position: relative;
+      //   //   left: 300px;
+
+      //   //   // Animation hinzufügen
+      //   //   animation: moveArrow 1.5s infinite ease-in-out;
+      //   // }
+
+      //   svg {
+      //     position: relative;
+      //     // margin: 110px 0px 0px 0px;
+      //     width: 250px;
+      //     height: 250px;
+      //     left: 300px;
+
+      //     clip-path: inset(0 0 0 0); // يبدأ كخط ظاهر بالكامل
+      //     // transition: width 0.09s ease-in-out, clip-path 0.09s ease-in-out; // حركتان للعرض والاختفاء
+      //     animation: moveArrow 3s infinite ease-in-out forwards;
+      //     animation-direction: normal; // Ensure the animation runs in the forward direction each time
+      //     // animation-fill-mode: forwards;
+
+      //     &::after {
+      //       content: "";
+      //       position: absolute;
+      //       width: 100%; // الخط الأفقي يمتد بشكل كامل
+      //       clip-path: inset(0 0 0 0); // الجزء الأمامي يختفي تدريجيًا أثناء الحركة
+      //     }
+      //   }
+      // }
+
+      //   @keyframes appear {
+      //     from {
+      //       opacity: 0;
+      //       scale: 0;
+      //       // clip-path: inset(0 0 0 0);
+      //     }
+      //     to {
+      //       // clip-path: inset(0 100% 100% 0);}
+      //       opacity: 1;
+      //       scale: 1;
+      //   }
+      //  }
+
+      // svg {
+      //   animation: appear 3s infinite ease-in-out;
+      // }
+      // Keyframes-Animation für die Bewegung
+      // @keyframes moveArrow {
+      //   0% {
+      //     // margin-top: 0; // Startposition
+      //     clip-path: inset(0 0 0 0);
+      //   }
+      //   50% {
+      //     // margin-top: 20px; // Bewegung nach links & drehen
+      //     clip-path: inset(0 100% 100% 0);
+      //   }
+      //   100% {
+      //     // margin-top: 0; // Zurück zur Startposition
+      //     clip-path: inset(0 0 0 0);
+      //   }
+      // }
+      // @keyframes moveArrow {
+      //   0% {
+      //     transform: translateX(0) rotate(0deg); // Startposition
+      //   }
+      //   50% {
+      //     transform: translateX(15px) rotate(0deg); // Bewegung nach links & drehen
+      //   }
+      //   100% {
+      //     transform: translateX(0) rotate(0deg); // Zurück zur Startposition
+      //   }
+      // }
     }
   }
-
-
   .arrow-left {
-    position: relative; /* السهم ثابت في الشاشة */
-    // top: 10%; /* النقطة "أ" */
-    // left: 50%; /* في منتصف الشاشة أفقيًا */
-    transform: translateX(-50%);
-    // z-index: 1000;
+    // position: relative; /* السهم ثابت في الشاشة */
+    // transform: translateX(-50%);
+    max-width: 263px;
     display: flex;
-    margin-bottom: -250px;
-  
+    // margin-bottom: -250px;
+    position: relative;
+    // bottom: 250px;
+    // bottom: clamp(250px, calc(100vw - 1440px) * 0.5 + 400px, 350px);
+    bottom: 30px;
+    left: 600px;
+    // animation: _ngcontent-ng-c2872076331_moveArrowWithDelay 10s ease-in-out infinite;
+    animation: _ngcontent-ng-c2876350893_moveArrowWithDelay 10s ease-in-out
+      infinite;
     svg {
-      position: relative;
-      width: 236px;
-      height: 235px;
-      left: 300px;
-      // right: -500px;
-      // left: clamp(100px, calc((100vw - 500px) * 0.5 + 100px), 500px);
-      bottom: 300px;
+      // position: relative;
+      // width: 236px;
+      // height: 235px;
+      // left: 300px;
+      // bottom: 300px;
+      // @media screen and (max-width: 1000px) and (min-width: 320px) {
+      //   left: clamp(600px, calc((100vw - 1000px) * 0.05 + 10px), 800px);
+      //   margin-bottom: -100px;
+      // }
       // animation: moveArrow 2s ease-in-out infinite forwards; /* حركة مستمرة بدون العودة للخلف */
 
-          /* الحركة */
-    // animation: moveArrow 2s ease-in-out forwards; /* الحركة */
-    // animation-delay: 0s; /* بداية الحركة مباشرة */
-    // animation-iteration-count: infinite; /* عدد المرات غير محدود */
-    // animation-direction: normal; /* لا عكس للحركة */
-    // animation-fill-mode: forwards; /* يبقى في النهاية */
-    // animation-play-state: running; /* بدء الحركة */
+      /* الحركة */
+      // animation: moveArrow 2s ease-in-out forwards; /* الحركة */
+      // animation-delay: 0s; /* بداية الحركة مباشرة */
+      // animation-iteration-count: infinite; /* عدد المرات غير محدود */
+      // animation-direction: normal; /* لا عكس للحركة */
+      // animation-fill-mode: forwards; /* يبقى في النهاية */
+      // animation-play-state: running; /* بدء الحركة */
 
-    /* إضافة تأخير بين كل دورة */
-    // animation: moveArrow 2s ease-in-out forwards, pause 5s steps(1) infinite;
-    animation: moveArrowWithDelay 10s ease-in-out infinite; /* الحركة مع تأخير */
+      /* إضافة تأخير بين كل دورة */
+      // animation: moveArrow 2s ease-in-out forwards, pause 5s steps(1) infinite;
+      // animation: moveArrowWithDelay 10s ease-in-out infinite; /* الحركة مع تأخير */
     }
   }
-  
+
   // حركة السهم
   @keyframes moveArrowWithDelay {
     0% {
@@ -187,84 +295,312 @@ section {
       transform: translate(-100px, 100px) rotate(0deg);
     }
   }
-  
-  
-  // .arrow-left {
-  //   width: 100%;
-  //   position: relative;
-  //   // img {
-  //   //   margin: 110px 0px 0px 0px;
-  //   //   width: 250px;
-  //   //   height: 250px;
-  //   //   position: relative;
-  //   //   left: 300px;
+}
 
-  //   //   // Animation hinzufügen
-  //   //   animation: moveArrow 1.5s infinite ease-in-out;
-  //   // }
+@media screen and (max-width: 1024px) {
+  section {
+    .about-me {
+      flex-direction: column;
+      .about-me-section {
+        h3 {
+          font-size: clamp(64px, 8vw, 78px);
+        }
+      }
 
-  //   svg {
-  //     position: relative;
-  //     // margin: 110px 0px 0px 0px;
-  //     width: 250px;
-  //     height: 250px;
-  //     left: 300px;
-      
-  //     clip-path: inset(0 0 0 0); // يبدأ كخط ظاهر بالكامل
-  //     // transition: width 0.09s ease-in-out, clip-path 0.09s ease-in-out; // حركتان للعرض والاختفاء
-  //     animation: moveArrow 3s infinite ease-in-out forwards;
-  //     animation-direction: normal; // Ensure the animation runs in the forward direction each time
-  //     // animation-fill-mode: forwards;
+      .imgs {
+        margin: 10px 0 100px 0;
+        .my-pic {
+          margin-bottom: unset;
+          img {
+            height: clamp(500px, (100vw - 1024px) * 0.5 + 600px, 600px);
+            width: clamp(500px, (100vw - 1024px) * 0.5 + 600px, 600px);
+          }
 
-  //     &::after {
-  //       content: "";
-  //       position: absolute;
-  //       width: 100%; // الخط الأفقي يمتد بشكل كامل
-  //       clip-path: inset(0 0 0 0); // الجزء الأمامي يختفي تدريجيًا أثناء الحركة
-  //     }
-  //   }
-  // }
+          .border-hover {
+            height: clamp(500px, (100vw - 1024px) * 0.5 + 600px, 600px);
+            width: clamp(500px, (100vw - 1024px) * 0.5 + 600px, 600px);
+            left: 26px;
+            bottom: clamp(470px, (100vw - 1024px) * 0.5 + 570px, 570px);
+          }
+        }
+      }
+    }
+    .arrow-left {
+      // transform: translateX(10%);
+      // bottom: 200px;
+      // width: 236px;
+      left: 300px;
+      width: 200px;
+      height: 200px;
+      // bottom: 400px;
+    }
+  }
+}
 
-//   @keyframes appear {
-//     from {
-//       opacity: 0;
-//       scale: 0;
-//       // clip-path: inset(0 0 0 0);
-//     }
-//     to {
-//       // clip-path: inset(0 100% 100% 0);}
-//       opacity: 1;
-//       scale: 1;
-//   }
-//  }
+@media screen and (max-width: 768px) {
+  section {
+    .about-me {
+      .about-me-section {
+        h3 {
+          font-size: clamp(48px, 8vw, 64px);
+          animation: blink 2s steps(1) infinite;
+        }
 
-  // svg {
-  //   animation: appear 3s infinite ease-in-out;
-  // }
-  // Keyframes-Animation für die Bewegung
-  // @keyframes moveArrow {
-  //   0% {
-  //     // margin-top: 0; // Startposition
-  //     clip-path: inset(0 0 0 0);
-  //   }
-  //   50% {
-  //     // margin-top: 20px; // Bewegung nach links & drehen
-  //     clip-path: inset(0 100% 100% 0);
-  //   }
-  //   100% {
-  //     // margin-top: 0; // Zurück zur Startposition
-  //     clip-path: inset(0 0 0 0);
-  //   }
-  // }
-  // @keyframes moveArrow {
-  //   0% {
-  //     transform: translateX(0) rotate(0deg); // Startposition
-  //   }
-  //   50% {
-  //     transform: translateX(15px) rotate(0deg); // Bewegung nach links & drehen
-  //   }
-  //   100% {
-  //     transform: translateX(0) rotate(0deg); // Zurück zur Startposition
+        .about-me-text {
+          font-size: clamp(18px, calc((100vw - 1024px) * 0.1 + 18px), 22px);
+        }
+
+        .btn-div .btn {
+          pointer-events: none; // Deaktiviert Hover vollständig
+        }
+        // Entferne den Hover-Effekt ab 780px
+        .btn-div {
+          cursor: pointer;
+          .btn:hover {
+            padding: 20px 60px; // Setzt den ursprünglichen Wert zurück
+            font-weight: 400;
+          }
+        }
+      }
+      .imgs {
+        .my-pic {
+          img {
+            display: flex;
+            justify-content: center;
+            height: clamp(500px, (100vw - 1024px) * 0.5 + 600px, 600px);
+            width: clamp(500px, (100vw - 1024px) * 0.5 + 600px, 600px);
+          }
+
+          .border-hover {
+            display: none;
+            height: clamp(500px, (100vw - 768px) * 0.5 + 500px, 600px);
+            width: clamp(500px, (100vw - 768px) * 0.5 + 500px, 600px);
+            left: 26px;
+            bottom: clamp(470px, (100vw - 768px) * 0.5 + 470px, 570px);
+          }
+        }
+      }
+    }
+  }
+
+//   @keyframes blink {
+//     0% { color: #000000; }
+//     50% { color: #00bc8f; }
+//     100% { color: #000000; }
+// }
+@keyframes blink {
+  0%, 100% { 
+      color: #000000; 
+      // text-shadow: 0 0 10px #000000; 
+  }
+  50% { 
+      color: #00bc8f; 
+      // text-shadow: 0 0 0 #00bc8f; 
+  }
+}
+}
+
+@media screen and (max-width: 640px) {
+  section {
+    .about-me {
+      // height: 100vh;
+      // margin-bottom: 200px;
+      .about-me-section {
+        h3 {
+          font-size: clamp(36px, 4vw, 64px);
+          position: absolute;
+          left: 15px;
+        }
+
+        .about-me-text {
+          font-size: clamp(18px, (100vw - 1024px) * 0.1 + 18px, 22px);
+          position: absolute;
+          left: 15px;
+          max-width: clamp(450px, (100vw - 640px) * 0.5 + 530px, 540px);
+          margin-top: 56px;
+        }
+
+        .icns {
+          margin-top: 300px;
+          .about-me-icn {
+            font-size: clamp(18px, (100vw - 1024px) * 0.1 + 18px, 22px);
+            img {
+              width: 32px;
+              height: 32px;
+            }
+          }
+        }
+
+        .btn-div {
+          // transform: translateX(100px);
+          // width: 300px;
+          // margin-top: 50px;
+          // position: relative;
+          // left: 50%;
+          // transform: translateX(-50%);
+          .btn {
+            padding: 20px 40px;
+          }
+          .btn-div .btn {
+            pointer-events: none; // Deaktiviert Hover vollständig
+          }
+        }
+      }
+      .imgs {
+        .my-pic {
+          img {
+            height: clamp(100px, (100vw - 640px) * 0.5 + 400px, 400px);
+            width: clamp(100px, (100vw - 640px) * 0.5 + 400px, 400px);
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+
+          .border-hover {
+            height: clamp(100px, (100vw - 640px) * 0.5 + 400px, 400px);
+            width: clamp(100px, (100vw - 640px) * 0.5 + 400px, 400px);
+            position: absolute; /* absolute statt relative */
+            position: relative;
+            bottom: 100%;
+            left: 50%;
+            transform: translate(-50%, -100%);
+          }
+        }
+      }
+      // .arrow-left {
+      //   // transform: translateX(-85%);
+      //   // width: 170px;
+      //   // position: relative;
+      //   // left: 170px;
+      //   // bottom: clamp(200px, calc(100vw - 640px) * 0.5 + 300px, 400px);
+      //   // width: 150px;
+      //   // height: 150px;
+      //   left: 150px;
+      //   width: 180px;
+      //   height: 180px;
+      //   margin-bottom: 50px;
+      //   svg {
+      //     width: 150px;
+      //     height: 150px;
+      //     // transform: translate(10%, 30%);
+      //     // bottom: 200px;
+      //     // margin: 100px 0px;
+      //   }
+      // }
+    }
+    .arrow-left {
+      // transform: translateX(-85%);
+      // width: 170px;
+      // position: relative;
+      // left: 170px;
+      // bottom: clamp(200px, calc(100vw - 640px) * 0.5 + 300px, 400px);
+      // width: 150px;
+      // height: 150px;
+      left: 150px;
+      width: 180px;
+      height: 180px;
+      // margin-bottom: 50px;
+      svg {
+        width: 150px;
+        height: 150px;
+        // transform: translate(10%, 30%);
+        // bottom: 200px;
+        // margin: 100px 0px;
+      }
+    }
+  }
+  // .about-me-section {
+  //   .arrow-left {
+  //     transform: translateX(10%);
+  //     transform: translatey(10%);
+  //     bottom: 100px;
+  //     width: 236px;
   //   }
   // }
 }
+
+@media screen and (max-width: 480px) {
+  section {
+    // height: 100vh;
+    .about-me {
+      .about-me-section {
+        position: unset;
+        left: clamp(20px, calc((100vw - 320px) * -0.5 + 130px), 130px);
+        h3 {
+          font-size: clamp(26px, (100vw - 480px) * 0.1 + 40px, 34px);
+          position: absolute;
+        }
+
+        .about-me-text {
+          position: absolute;
+          left: clamp(0px, (100vw - 480px) * 0.5 + 80px, 20px);
+          max-width: clamp(300px, (100vw - 480px) * 0.5 + 380px, 430px);
+          margin-top: clamp(48px, (100vw - 480px) * 0.1 + 64px, 72px);
+          font-size: clamp(16px, (100vw - 480px) * 0.1 + 18px, 22px);
+        }
+
+        .icns {
+          margin-top: 340px;
+          max-width: clamp(300px, (100vw - 480px) * 0.5 + 380px, 400px);
+          .about-me-icn {
+            font-size: clamp(15px, (100vw - 480px) * 0.1 + 18px, 18px);
+            img {
+              width: 32px;
+              height: 32px;
+            }
+          }
+        }
+
+        .btn-div {
+          // width: 300px;
+          // margin-top: 50px;
+          // position: relative;
+          // left: 50%;
+        }
+      }
+
+      .imgs {
+        margin-bottom: 20px;
+        .my-pic {
+          img {
+            height: clamp(100px, (100vw - 640px) * 0.5 + 400px, 400px);
+            width: clamp(100px, (100vw - 640px) * 0.5 + 400px, 400px);
+            left: 50%;
+            transform: translateX(-50%);
+          }
+
+          .border-hover {
+            left: 50%;
+            height: clamp(100px, (100vw - 640px) * 0.5 + 400px, 400px);
+            width: clamp(100px, (100vw - 640px) * 0.5 + 400px, 400px);
+          }
+        }
+        // .arrow-left {
+        //   bottom: clamp(200px, calc(100vw - 480px) * 0.5 + 220px, 300px);
+        //   left: 130px;
+        //   width: 120px;
+        //   height: 120px;
+        //   svg {
+        //     width: 120px;
+        //     height: 120px;
+        //   }
+        // }
+      }
+    }
+
+    .arrow-left {
+      // bottom: clamp(200px, calc(100vw - 480px) * 0.5 + 220px, 300px);
+      // left: 130px;
+      // width: 120px;
+      // height: 120px;
+      left: 100px;
+      width: 120px;
+      height: 120px;
+      svg {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  }
+}
+// }

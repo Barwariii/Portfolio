@@ -9,10 +9,12 @@ footer {
   // top: 400px;
   clip-path: polygon(0% 0%, 100% 15%, 100% 100%, 0% 100%);
   background-color: #000000;
+  max-width: 1440px;
   width: 100%;
   .footer-container {
     height: 1061px;
-    width: 1440px;
+    width: 100%;
+    max-width: 1440px;
     // max-width: 1440px;
     clip-path: polygon(0% 0%, 100% 13%, 100% 100%, 0% 100%);
     background-color: #000000;
@@ -152,7 +154,7 @@ footer {
       }
     }
     .footer-bottom {
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: space-between;
       background-color: #000000;
@@ -234,4 +236,67 @@ footer {
       }
     }
   }
+
+  @media screen and (max-width: 768px) {
+    .footer-container {
+      .footer-tittle {
+        font-size: clamp(40px, calc((100vw - 768px) * 0.1 + 70px), 78px);
+        margin-left: clamp(10px, (100vw - 768px)* 0.5 + 100px, 100px);
+        width: clamp(280px, (100vw - 768px)* 0.5 + 500px, 600px);
+      }
+      .conatct-form-container {
+        .form-text {
+          .text-one {
+            font-size: clamp(20px, calc((100vw - 768px) * 0.1 + 30px), 32px);
+          }
+          .text-two {
+            font-size: clamp(12px, calc((100vw - 768px) * 0.1 + 20px), 22px);
+          }
+        }
+        .form-groups {
+          .form-group {
+            margin: 15px 0px 40px 0px;
+            input[type=text],[type=email], textarea {
+              width: clamp(280px, (100vw - 768px)* 0.5 + 500px, 617px);
+              min-width: unset;
+              max-width: unset;
+            }
+          }
+          .submit-btn-div {
+            .submit-btn[type=submit] {
+              width: 201px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // @media screen and (max-width: 640px) {
+  //   .footer-container {
+  //     .conatct-form-container {
+  //       .form-groups {
+  //       }
+  //     }
+  //   }
+    
+  // }
 }
+
+// @media screen and (max-width: 640px) {
+//   .footer-container {
+//     .conatct-form-container {
+//       .form-groups {
+//         .form-group {
+//           margin: 15px 0px 40px 0px;
+//           // width: clamp(280px, (100vw - 640px)* 0.5 + 400px, 500px);
+//           // input {
+//           //   width: clamp(280px, (100vw - 640px)* 0.5 + 400px, 500px);
+//           //   min-width: unset;
+//           //   max-width: unset;
+//           // }
+//         }
+//       }
+//     }
+//   }
+// }

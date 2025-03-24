@@ -14,7 +14,7 @@ body {
   // max-width: 100%;
   width: 100%;
   height: 92px;
-  background-color: #FFFCF3;
+  background-color: #fffcf3;
   padding: 30px 100px;
   z-index: 10;
 
@@ -70,7 +70,7 @@ body {
       color: white;
       font-size: 24px;
       text-align: center;
-  
+
       &:hover {
         color: #ff6600;
       }
@@ -93,7 +93,6 @@ body {
 //   }
 // }
 
-
 /* Show menu when active */
 .menu.active {
   display: flex;
@@ -102,54 +101,48 @@ body {
     height: 571px;
     display: flex;
     flex-direction: column;
-    // position: absolute;
     top: 93px;
     left: 430px;
     gap: 35px;
     overflow: hidden;
-  
+
     a {
       position: relative; // مهم جدًا لإعطاء مرجع للـ ::before و ::after
       width: 580px;
       height: 167px;
-      font-family: 'Syne-Bold';
+      font-family: "Syne-Bold";
       font-weight: 700;
       font-size: 96px;
       line-height: 96px;
       text-decoration: none;
       color: #000000;
       text-align: center;
-  
+
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         left: 0px; // المسافة من النص
         bottom: 30px; // يبدأ من أعلى النص
         width: 4px; // عرض الخط العمودي
-        // height: 30%; // طول الخط العمودي يساوي ارتفاع النص
         height: 52px;
         background-color: #000000;
         transform: scaleY(1); // إخفاء الخط باستخدام التحجيم
         transform-origin: bottom; // التحرك يبدأ من الأعلى
         transition: transform 0.3s ease-out;
       }
-  
+
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         left: 0;
         bottom: 30px; // المسافة بين النص والخط الأفقي
-        // width: 5%; // عرض الخط يبدأ من 0
         width: 39px;
         height: 4px;
         background-color: #000000;
-        // transform: scaleY(1);
-        // transform-origin: left;
-        // transition: width 0.3s ease-out;
         clip-path: inset(0 0 0 0); // يبدأ كخط ظاهر بالكامل
         transition: width 0.09s ease-in-out, clip-path 0.09s ease-in-out; // حركتان للعرض والاختفاء
       }
-  
+
       // عند تمرير الماوس (hover)
       &:hover::before {
         height: 0px;
@@ -158,7 +151,9 @@ body {
 
       &:hover::after {
         width: 100%; // الخط الأفقي يمتد بشكل كامل
-        clip-path: inset(0 0% 0 50%); // الجزء الأمامي يختفي تدريجيًا أثناء الحركة
+        clip-path: inset(
+          0 0% 0 50%
+        ); // الجزء الأمامي يختفي تدريجيًا أثناء الحركة
       }
     }
   }
@@ -166,4 +161,60 @@ body {
 
 .menu-active {
   overflow: hidden !important;
+}
+
+@media screen and (max-width: 768px) {
+  .menu.active {
+    .menu-list {
+      width: 420px;
+  
+      a {
+        position: relative; // مهم جدًا لإعطاء مرجع للـ ::before و ::after
+        width: 450px;
+        font-size: 72px;
+        line-height: 96px;
+  
+        &::before {
+          left: 10px; // المسافة من النص
+          bottom: 50px; // يبدأ من أعلى النص
+          
+        }
+  
+        &::after {
+          left: 10px;
+          bottom: 50px; // المسافة بين النص والخط الأفقي
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .menu.active {
+    .menu-list {
+      width: 280px;
+      height: 450px;
+      gap: 20px;
+  
+      a {
+        position: relative; // مهم جدًا لإعطاء مرجع للـ ::before و ::after
+        width: 300px;
+        height: 110px;
+        font-size: 48px;
+        line-height: 96px;
+  
+        &::before {
+          left: 10px; // المسافة من النص
+          // bottom: 40px; // يبدأ من أعلى النص
+          bottom: 10px;
+          height: 40px;
+        }
+  
+        &::after {
+          left: 10px;
+          bottom: 10px; // المسافة بين النص والخط الأفقي
+        }
+      }
+    }
+  }
 }
