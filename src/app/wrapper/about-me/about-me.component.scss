@@ -98,7 +98,7 @@ section {
         bottom: clamp(380px, calc((100vw - 1000px) * 0.5 + 380px), 580px);
         left: clamp(0px, calc((100vw - 1000px) * 0.05 + 10px), 50px);
         background: none;
-        display: flex;
+        display: none;
       }
 
       &:hover {
