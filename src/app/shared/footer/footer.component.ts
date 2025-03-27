@@ -65,15 +65,19 @@ export class FooterComponent {
   };
 
   onSubmit(ngForm: NgForm) {
+    console.log('Form submitted:', ngForm.submitted);
+    console.log('Form valid:', ngForm.form.valid);
+    console.log('Mail test:', this.mailTest);
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-
+            console.log('HTTP Response:', response);
             ngForm.resetForm();
           },
           error: (error) => {
-            console.error(error);
+            // console.error(error);
+            console.error('HTTP Error:', error);
           },
           complete: () => console.info('send post complete'),
         });
