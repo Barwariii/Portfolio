@@ -17,7 +17,7 @@ import { FooterComponent } from "../shared/footer/footer.component";
 @Component({
   selector: 'app-wrapper',
   standalone: true,
-  imports: [CommonModule, NavBarComponent, LandingPageComponent, AboutMeComponent, MySkillsComponent, PortfolioComponent, FooterComponent, FooterComponent],
+  imports: [CommonModule, NavBarComponent, LandingPageComponent, AboutMeComponent, MySkillsComponent, PortfolioComponent, FooterComponent],
   templateUrl: './wrapper.component.html',
   styleUrl: './wrapper.component.scss'
 })

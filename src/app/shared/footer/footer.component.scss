@@ -2,11 +2,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  // display: flex;
-  // height: 100vh;
-  // background-color: #000000;
-  // position: relative;
-  // top: 400px;
   clip-path: polygon(0% 0%, 100% 15%, 100% 100%, 0% 100%);
   background-color: #000000;
   max-width: 1440px;
@@ -110,12 +105,16 @@ footer {
         .Privacy-container {
           background-color: #000000;
           margin: 0px 25px 25px 25px;
-          display: flex;
+          display: none;
           align-items: center;
           input {
             width: 24px;
             height: 24px;
             margin: 3px;
+          }
+          input:focus {
+            // transform: scale(1.001);
+            zoom: 1;
           }
           label,
           a {
@@ -217,13 +216,15 @@ footer {
           padding: 5px 10px;
           gap: 3px;
           box-sizing: border-box;
-          span {
+          a {
             color: #fffcf3;
             background-color: #000000;
             font-family: "Overpass-Regular";
             font-size: 16px;
             padding-top: 16px;
             line-height: 19.2px;
+            text-decoration: none;
+            cursor: pointer;
           }
         }
 
@@ -249,6 +250,7 @@ footer {
 
   @media screen and (max-width: 768px) {
     .footer-container {
+      height: 1100px;
       .footer-tittle {
         font-size: clamp(40px, calc((100vw - 768px) * 0.1 + 70px), 78px);
         margin-left: clamp(10px, (100vw - 768px) * 0.5 + 100px, 100px);
@@ -283,151 +285,34 @@ footer {
       }
 
       .footer-bottom {
-        // display: flex;
-        // align-items: center;
-        // justify-content: space-between;
-        // margin: 30px 100px 0 100px;
-        // height: 69px;
-        display: none;
         flex-direction: column;
+        margin: 30px 0px 0px 0px;
+
         .left-bottom-div {
-          // display: flex;
-          // flex-direction: column;
-          // gap: 16px;
-          // max-height: 0px;
-          // position: relative;
-          // bottom: 150px;
+          align-items: center;
+          bottom: 60px;
+          gap: 24px;
           img {
-            // background: none;
-            // width: 150px;
-            // filter: brightness(0) saturate(100%) invert(100%) sepia(0%)
-            //   saturate(0%) hue-rotate(67deg) brightness(105%) contrast(105%);
-            // position: relative;
-            // right: 50px;
-            // top: 50px;
-          }
-          span {
-            // color: #fffcf3;
-            // background-color: #000000;
-            // font-family: "Overpass-Regular";
-            // font-size: 22px;
-            // line-height: 26.4px;
+            right: unset;
           }
         }
-  
+
         .right-bottom-div {
-          // background-color: #000000;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 110px;
           .footer-icons {
-            // background-color: #000000;
-            // width: 204px;
-            // height: 40px;
-            // display: flex;
-            // justify-content: space-evenly;
-            // gap: 42px;
-            order: -1;
-            img {
-              // background-color: #000000;
-              // height: 40px;
-              // width: 40px;
-              // gap: 42px;
-            }
+            z-index: 1;
           }
-  
+
           .legal-notice-div {
-            // width: 204px;
-            // height: 40px;
-            // background-color: #000000;
-            // color: #fffcf3;
-            // display: flex;
-            // justify-content: end;
-            // padding: 5px 10px;
-            // gap: 3px;
-            // box-sizing: border-box;
-            span {
-              // color: #fffcf3;
-              // background-color: #000000;
-              // font-family: "Overpass-Regular";
-              // font-size: 16px;
-              // padding-top: 16px;
-              // line-height: 19.2px;
-            }
+            width: unset;
+            height: 30px;
+            align-items: center;
           }
         }
       }
     }
   }
-
-  // @media screen and (max-width: 768px) {
-  //   .footer-container {
-  //     .footer-bottom {
-  //       flex-direction: column;
-  //       align-items: center;
-  //       text-align: center;
-  //       gap: 15px; // Abstand zwischen den Elementen
-  
-  //       .right-bottom-div {
-  //         order: -2; // Icons ganz oben
-  //         display: flex;
-  //         flex-direction: column;
-  //         align-items: center;
-  
-  //         .footer-icons {
-  //           display: flex;
-  //           gap: 10px;
-  //           justify-content: center;
-  //         }
-  //       }
-  
-  //       .left-bottom-div {
-  //         order: -1; // Logo und Name unter den Icons
-  //         display: flex;
-  //         flex-direction: column;
-  //         align-items: center;
-  
-  //         img {
-  //           width: 120px; // Falls nötig anpassen
-  //         }
-  
-  //         span {
-  //           font-size: 18px; // Falls nötig anpassen
-  //         }
-  //       }
-  
-  //       .legal-notice-div {
-  //         order: 0; // Legal Notice ganz unten
-  //         text-align: center;
-  //         margin-top: 10px;
-  //       }
-  //     }
-  //   }
-  // }
-  
-
-  // @media screen and (max-width: 640px) {
-  //   .footer-container {
-  //     .conatct-form-container {
-  //       .form-groups {
-  //       }
-  //     }
-  //   }
-
-  // }
 }
-
-// @media screen and (max-width: 640px) {
-//   .footer-container {
-//     .conatct-form-container {
-//       .form-groups {
-//         .form-group {
-//           margin: 15px 0px 40px 0px;
-//           // width: clamp(280px, (100vw - 640px)* 0.5 + 400px, 500px);
-//           // input {
-//           //   width: clamp(280px, (100vw - 640px)* 0.5 + 400px, 500px);
-//           //   min-width: unset;
-//           //   max-width: unset;
-//           // }
-//         }
-//       }
-//     }
-//   }
-// }

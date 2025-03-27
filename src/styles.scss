@@ -4,6 +4,7 @@
     box-sizing: border-box;
     // scrollbar-width: thin;
     // scrollbar-color: #010101 #FFFCF3;
+    scroll-behavior: smooth;
     &.menu-active {
         overflow: hidden !important;
       }
