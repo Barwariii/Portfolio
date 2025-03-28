@@ -64,7 +64,7 @@ footer {
         background-color: #000000;
 
         .form-group {
-          margin: 15px 25px 40px 25px;
+          margin: 15px 25px 30px 25px;
           // position: absolute;
           input[type="text"],
           [type="email"],
@@ -104,9 +104,10 @@ footer {
         // Privacy container
         .Privacy-container {
           background-color: #000000;
-          margin: 0px 25px 25px 25px;
-          display: none;
+          margin: 0px 25px 18px 25px;
+          display: flex;
           align-items: center;
+          box-sizing: border-box;
           input {
             width: 24px;
             height: 24px;
@@ -253,7 +254,8 @@ footer {
       height: 1100px;
       .footer-tittle {
         font-size: clamp(40px, calc((100vw - 768px) * 0.1 + 70px), 78px);
-        margin-left: clamp(10px, (100vw - 768px) * 0.5 + 100px, 100px);
+        // margin-left: clamp(10px, (100vw - 768px) * 0.5 + 100px, 100px);
+        margin: 130px 0 40px clamp(10px, (100vw - 768px) * 0.5 + 100px, 100px);
         width: clamp(280px, (100vw - 768px) * 0.5 + 500px, 600px);
       }
       .conatct-form-container {
@@ -276,9 +278,27 @@ footer {
               max-width: unset;
             }
           }
+
+          .Privacy-container{
+            margin: 0px 0px 18px 0px;
+            width: clamp(280px, (100vw - 768px)* 0.5 + 500px, 617px);
+            .checkbox {
+              width: 18px;
+              height: 18px;
+              margin-right: 8px;
+            }
+            .privacy {
+              font-size: clamp(14px, calc((100vw - 768px) * 0.1 + 16px), 18px);
+              a {
+                font-size: clamp(14px, calc((100vw - 768px) * 0.1 + 16px), 18px);
+              }
+            }
+          }
+
           .submit-btn-div {
             .submit-btn[type="submit"] {
               width: 201px;
+              height: 60px;
             }
           }
         }
@@ -286,7 +306,7 @@ footer {
 
       .footer-bottom {
         flex-direction: column;
-        margin: 30px 0px 0px 0px;
+        margin: 18px 0px 0px 0px;
 
         .left-bottom-div {
           align-items: center;

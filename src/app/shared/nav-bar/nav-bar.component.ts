@@ -25,6 +25,27 @@ export class NavBarComponent {
     });
   }
 
+  navigateToSection(sectionId: string): void {
+    this.menuActive = false;
+    document.body.classList.remove('menu-active'); // Entfernt die Klasse vom Body
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' }); // Scrollt zur Sektion
+    }
+}
+
+
+// navigateToSection(sectionId: string): void {
+//   this.menuActive = false;
+//   document.body.classList.remove('menu-active'); // Entfernt die Klasse vom Body
+//   const section = document.getElementById(sectionId);
+//   if (section) {
+//       const yOffset = -200; // Offset für die Navbar
+//       const yPosition = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+//       window.scrollTo({ top: yPosition, behavior: 'smooth' }); // Scrollt zur Sektion mit Offset
+//   }
+// }
+
 translate = inject(TranslationService);
 
 }
